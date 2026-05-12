@@ -1,8 +1,11 @@
-# TaskBase_ToDoListApp
+#TaskBase
+To Do List - Mobile Application
+-----------------------------------------------------------
 
-Coming Soon 
+Requirement: <br>
+Software: Android Studio, Expo Go, XAMPP, Visual Studio Code (IDE) <br>
+Framework: React-Native <br>
+Language: PHP, JavaScript, TypeScript<br>
 
-@This document only for testing purposes, any relevent updates will proceed with this file.
-@Push Testing No.1
-Text Testing:
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+This is the code repository of TaskBase, a mobile application that desgined to help users to store notes, create tasks, mark calendars and managing activity timetables effeciently. This application provided several features that enable users to keep track of their schedule, reminders, progress and task categorization, all of which are vital for improving balence and well-being in daily life.<br> Features includes calendar viewing, task progress tracking with percentage counter, timeline schedule and the ability to edit or delete task.
+
