@@ -1,5 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import {View, Text, Alert, TextInput, TouchableOpacity, StyleSheet,} from 'react-native';
+import { useFonts } from 'expo-font';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator(); //set navigation 
 
