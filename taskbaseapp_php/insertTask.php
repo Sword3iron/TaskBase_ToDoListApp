@@ -24,10 +24,10 @@ $result = $conn->query($sql);
 //check if result is true
 if ($result === TRUE)
 {
-    echo json_encode(["success" => true]);
+    echo json_encode(["success" => true]); //if insert successfully, return success
 }else{
     echo json_encode(["success" => false,
-                      "error" => $conn -> error]);
+                      "error" => $conn -> error]); //if insert failed, return message
 }
 
 //close database connection
