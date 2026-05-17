@@ -7,7 +7,6 @@ const Stack = createStackNavigator(); //set navigation
 
 function SignUpPage({ navigation })
 {
-
     //load font family from folder
     const [fontLoaded] = useFonts({
         lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
