@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App()
+const Stack = createStackNavigator(); //set navigation 
+
+function LoginPage({ navigation })
 {
     return(
         <View style={styles.screenContainer}>
@@ -27,7 +29,7 @@ export default function App()
                 style = {styles.buttonNavigation}
                 onPress = {() => navigation.navigate('SignUp')}
             >
-                                
+
             {/**TEXT BUTTON */}
             <Text style = {styles.buttonText}>No Account? Click Here</Text>
 
@@ -41,6 +43,8 @@ export default function App()
         </View>
     );
 }
+
+export default LoginPage;
 
 const style = StyleSheet.create({
     container:{
