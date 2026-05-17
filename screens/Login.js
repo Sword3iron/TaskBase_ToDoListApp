@@ -5,6 +5,75 @@ const Stack = createStackNavigator(); //set navigation
 
 function LoginPage({ navigation })
 {
+     //load font family from folder
+    const [fontLoaded] = useFonts({
+        lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
+        mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
+        boldNanum: require('../assets/font/nanumgothic/NanumGothic-ExtraBold.ttf'), // bold inter font
+        regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
+    });
+    
+
+    //set declaration use state for information extraction
+    const [email, setEmail] = useState(''); //email 
+    const [password, setPassword] = useState(''); //passoword
+    const [emailWarning, setEmailWarning] = useState(''); //email warning
+    const [passwordWarning, setPasswordWarning] = useState(''); //password warning
+
+    //function to handle login
+    const handleLogin = () => {
+        //set valid true
+        let valid = true;
+        setEmailWarning(''); //set email warning
+        setPasswordWarning(''); //set password warning
+
+        //if email isn't inserted
+        if (!email){
+            //give warning message
+            setEmailWarning('Error: Email is required!');
+            //valid is false
+            valid = false; 
+        }
+
+        //if password isn't inserted
+        if (!password){
+            //give warning message
+            setPasswordWarning('Error: Password is required!');
+             //valid is false
+            valid = false;
+        }
+ 
+        //return valid data
+        if (!valid) return;
+
+        //fetch login insertion from API mySQL
+        fetch("http://192.168.1.115/taskbaseapp/login.php", {
+            method: 'POST', //use method post
+            headers: { 'Content-Type':'application/json'}, //JSON content
+            body: JSON.stringify({ email, password}) //convert data to JSON string
+        })
+        .then(response => response.json())  //parse JSON response
+        .then(data => {
+            console.log("Login Response: ", data); //debug login data
+             //if server success, show alert message
+            if (data.success){
+                navigation.replace('TabBottom', { 
+                    userId: data.id, //extract user id
+                    username: data.username, //extract username
+                    profilePic: data.profilePic, //extract profile Pic
+                });
+            }else{
+                //if failed, show error message
+                Alert.alert('Login Failed', data.message);
+            }
+        })
+        .catch(error => {
+            //handle network or other errors
+            console.error(error);
+            Alert.alert('Error', 'Something Went Wrong.');
+        });
+    };
+
     return(
         <View style={styles.screenContainer}>
             <Text style = {styles.loginTextTitle}>LOGIN</Text>
