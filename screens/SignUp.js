@@ -126,10 +126,73 @@ function SignUpPage({ navigation })
 export default SignUpPage;
 
 const style = StyleSheet.create({
-    container:{
+
+    //CONTAINER
+    screenContainer:{
         flex: 1,
+        backgroundColor:'#faff97',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+    },
+
+    //TEXT
+    SignUpTextTitle:{
+        fontSize:40,
+        fontFamily: 'boldNanum',
+        fontWeight: '900',
+        color: '#d1d500',
+        marginBottom: 5,
+    },
+
+    subtitle:{
+        fontSize: 14,
+        fontFamily: 'regularNanum',
+        color: '#ccc',
+        marginBottom:40,
+    },
+
+    labelText:{
+        alignSelf: 'flex-start',
+        margin: 'flex-start',
+        fontWeight:'bold',
+        marginBottom: 5,
+    },
+
+    inputText:{
+        width: '100%',
         backgroundColor: '#ffffff',
-        alignItems:'center',
-        justifyContent:'center;'
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+        borderRadius: 10,
+        marginBottom: 20,
+    },
+
+    //BUTTON
+    buttonNavigation:{
+        width: '100%',
+        backgroundColor: '#2cff59',
+        paddingVertical: 15,
+        borderRadius: 25,
+        marginTop: 20,
+        alignItems: 'center',
+        borderColor: '#008000',
+        borderWidth: 1,
+    },
+
+    buttonText:{
+        color: '#000000',
+        fontWeight: 'bold',
+    },
+
+    registerbuttonNavigation: {
+        width: '100%',
+        backgroundColor: '#38f64d',
+        paddingVertical: 15,
+        borderRadius: 25,
+        marginTop: 15,
+        alignItems: 'center',      
+        borderColor: '#008000',
+        borderWidth: 1,
     }
 })
