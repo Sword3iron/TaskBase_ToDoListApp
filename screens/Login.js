@@ -15,7 +15,6 @@ function LoginPage({ navigation })
         regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
     });
     
-
     //set declaration use state for information extraction
     const [email, setEmail] = useState(''); //email 
     const [password, setPassword] = useState(''); //passoword
