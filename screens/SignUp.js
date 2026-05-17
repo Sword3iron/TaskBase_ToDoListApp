@@ -7,6 +7,64 @@ const Stack = createStackNavigator(); //set navigation
 
 function SignUpPage({ navigation })
 {
+
+    //load font family from folder
+    const [fontLoaded] = useFonts({
+        lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
+        mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
+        boldNanum: require('../assets/font/nanumgothic/NanumGothic-ExtraBold.ttf'), // bold inter font
+        regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
+    });
+
+     //set declaration use state for information extraction
+    const [username, setUsername] = useState(''); //username
+    const [email, setEmail] = useState(''); //email
+    const [password, setPassword] = useState(''); //password
+    const [confirmPassword, setConfirmPassword] = useState(''); //confirm password
+
+    //function to handle registration
+    const registerUser = () => {
+
+        //if password is not match
+        if (password !== confirmPassword){
+            //display aert message
+            Alert.alert('Error', 'Password does not match.');
+            return;
+        }
+
+        //store user data
+        const userData = {
+            username, //username
+            email, //email
+            password, //password
+        };
+
+        //fetch registration insertion from API mySQL
+        fetch('http://192.168.1.115/taskbaseapp/register.php',{
+            method: 'POST', //use method post
+            headers: { 'Content-Type' : 'application/json' }, //JSON content
+            body: JSON.stringify(userData), //convert data to JSON string
+        })
+        .then(response => response.json()) //parse JSON response
+        .then(data => {
+            //if server success, show alert message
+            if(data.success){
+                //display message
+                Alert.alert('Success', 'Registration Successful');
+                //navigate back to login page
+                navigation.navigate('Login');
+            }else{
+                //if failed, show error message
+                Alert.alert('Error', 'Regisration Failed');
+            }
+        })
+        .catch(error => {
+            //handle network or other errors
+            console.error(error);
+            Alert.alert('Error', 'Something Went Wrong');
+        });
+    };
+
     return(
        <View style={styles.screenContainer}>
             <Text style = {styles.SignUpTextTitle}>Sign Up</Text>
