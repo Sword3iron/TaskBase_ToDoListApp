@@ -1,7 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import {View, Text, Alert, TextInput, TouchableOpacity, StyleSheet,} from 'react-native';
+import { useFonts } from 'expo-font';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App()
+const Stack = createStackNavigator(); //set navigation 
+
+function SignUpPage({ navigation })
 {
     return(
        <View style={styles.screenContainer}>
@@ -60,6 +64,8 @@ export default function App()
         </View>
     );
 }
+
+export default SignUpPage;
 
 const style = StyleSheet.create({
     container:{
