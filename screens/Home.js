@@ -7,3 +7,8 @@ import { ThemeContext } from '../themeColor/ThemeContext';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchWeatherApi } from 'openmeteo';
 import { LinearGradient } from 'expo-linear-gradient';
+
+
+const styles = StyleSheet.create({
+    
+})
