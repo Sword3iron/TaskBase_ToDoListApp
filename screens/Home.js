@@ -8,7 +8,24 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchWeatherApi } from 'openmeteo';
 import { LinearGradient } from 'expo-linear-gradient';
 
+const { width } = Dimensions.get('window'); //Get Window width for screen fit
+const Stack = createStackNavigator(); //Set Navigation Stack
+
+/***************************************************************/
+///*************************HOMEPAGE**************************///
+/***************************************************************/
+
+//This is the main home page for application.
+//Here user can view calanders, date, and today tasks.
+function Homepage({ route, navigation}){
+    const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
+    const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
+    
+
+}
+
+export default Homapage;
 
 const styles = StyleSheet.create({
-    
+
 })
