@@ -21,10 +21,21 @@ function Homepage({ route, navigation}){
     const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
     const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
     
+    return(
+        <SafeAreaView
+            style={{flex: 1, backgroundColor: colors.background2}}
+            edges ={['left', 'right', 'bottom']}
+        >
+            <View style={[styles.container, {backgroundColor: colors.background2}]}>
+                <View style={styles.screenContainer}>
 
+                </View>
+            </View>
+        </SafeAreaView>
+    );
 }
 
-export default Homapage;
+export default Homepage;
 
 const styles = StyleSheet.create({
 
