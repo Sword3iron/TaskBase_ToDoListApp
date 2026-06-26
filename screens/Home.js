@@ -78,6 +78,26 @@ function Homepage({ route, navigation}){
                         </View>
                     </TouchableOpacity>
 
+                     {/**DATE ROW*/}
+                    <TouchableOpacity
+                    onPress={()=> navigation.navigate('Task', {
+                            screen: 'TaskCalanderPage',
+                            params: {userId, username, profilePic}
+                            })
+                        }
+                    >
+                        <View style={styles.sqaureCalanderDateContainer}>
+                            <FlatList
+                                data={dates}
+                                renderItem={renderDateItem}
+                                keyExtractor={(item) => item.toDateString()}
+                                horizontal
+                                showsHorizontalScrollIndicator={false}
+                                contentContainerStyle={styles.flatListCalender}
+                            />
+                        </View>
+                    </TouchableOpacity>
+
                 </View>
             </View>
         </SafeAreaView>
