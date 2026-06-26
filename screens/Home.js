@@ -98,6 +98,49 @@ function Homepage({ route, navigation}){
                         </View>
                     </TouchableOpacity>
 
+                    {/**TASK LIST*/}
+                    <Text style={[styles.headTitle, {color:colors.text}]}>Today's Tasks</Text>
+                    <View style={styles.taskWrapper}>
+                        <ScrollView
+                            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+                        >
+                                <View style={styles.taskContainer}>
+                                    {tasks.length === 0 ? (
+                                        <View style={styles.emptyTaskBox}>
+                                            <Text style={styles.emptyTaskText}>
+                                                No Task Today.
+                                            </Text> 
+                                        </View> 
+                                    ) : (
+                                        tasks.map((task, index) => (
+                                        <TouchableOpacity  
+                                            key={index}
+                                            onPress={()=> navigation.navigate('Task' ,{screen: 'TaskList'})}
+                                        >
+                                            <LinearGradient 
+                                            colors={['#38ff4d', '#ffffff']}
+                                            style={styles.taskCard}
+                                            start={{x:0, y:0.2}}
+                                            end={{x:0.5, y:1.5}}
+                                            >
+                                                <Text style={styles.taskTitle}>{task.taskTitle}</Text>
+                                                <Text style={styles.taskCategory}>{task.taskCategory}</Text>
+                                                <View style={styles.taskFooter}>
+                                                    <Text style={styles.taskTime}>
+                                                        {task.startTime} - {task.endTime}
+                                                    </Text>
+                                                    <View style={[styles.progressBox, getProgressStyle(task.taskProgress)]}>
+                                                        <Text style={styles.progressText}>{task.taskProgress}</Text>
+                                                    </View>
+                                                </View>
+                                            </LinearGradient>
+                                        </TouchableOpacity>
+                                        ))
+                                    )}
+                                </View>
+                        </ScrollView>
+                    </View>
+
                 </View>
             </View>
         </SafeAreaView>
