@@ -52,6 +52,32 @@ function Homepage({ route, navigation}){
                         </TouchableOpacity>
                     </View>
 
+                    {/**CALANDER DATE */}
+                    <TouchableOpacity
+                    onPress={()=> navigation.navigate('Calender')}
+                    >
+                        <View style={styles.dateContainerWrapper}>    
+                            <View style={styles.dateContainer}>
+                                <View style={styles.weatherContainer}>
+                                        <Text style={styles.dateTextWeek}>
+                                            Today - {weekday}
+                                        </Text>
+                                        {icon && (
+                                            <Ionicons name={icon} size={25} style={{alignItems: 'flex-end'}}/>
+                                        )}
+                                        {weather && (
+                                            <Text style={styles.weatherText}>
+                                                {weather}
+                                            </Text>
+                                        )}
+                                </View>
+                                    <Text style={styles.dateTextDate}>
+                                        {formattedDate.replace(`${weekday}, `, '')}
+                                    </Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
                 </View>
             </View>
         </SafeAreaView>
