@@ -138,7 +138,10 @@ function Homepage({ route, navigation}){
         }
     }
 
-
+    //use effect hook to fetch tasks whenever selectedDate changes
+    useEffect(() => {
+        fetchTaskData(selectedDate); //fetch task data
+    }, [selectedDate]);  //display array of selected date
 
 
 
