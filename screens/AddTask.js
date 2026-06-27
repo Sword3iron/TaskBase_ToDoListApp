@@ -9,6 +9,13 @@ import { ThemeContext } from '../themeColor/ThemeContext';
 
 const Stack = createNativeStackNavigator(); //set navigation 
 
+function AddNewTask({route, navigation}){
+    
+}
+
+function EditTask({route, navigation}){
+
+}
 
 function AddTaskPage({route})
 {
@@ -18,5 +25,5 @@ function AddTaskPage({route})
 export default AddTaskPage;
 
 const styles = StyleSheet.create({
-    
+
 })
