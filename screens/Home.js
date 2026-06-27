@@ -52,7 +52,36 @@ function Homepage({ route, navigation}){
     const handleAddTask = () =>{
         navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to task page, passing parameters
     }; 
-    
+
+    //store dates in array
+    const dates = [];
+    for (let i=0; i<=4; i++){ //for each row in 4 column, loop through 5 days
+        const squareDate = new Date(today); //create a new date object based on today date
+        squareDate.setDate(today.getDate() + i); //then use increment by i to memorize the date by 'i'
+        dates.push(squareDate); //store the date to the array
+    }
+
+    //function to render each item in the UI
+    const renderDateItem = ({ item }) => {
+        //check if the itme is return date by string
+        const isCurrentDate = item.toDateString() === today.toDateString();
+        return(
+            <View style={[styles.squareDateItem, isCurrentDate && styles.squareCurrentDateItem]}>
+
+                {/**DISPLAY THE DAY OF THE MONTH */}
+                <Text style={[styles.squareDayText, isCurrentDate && styles.sqaureCurrentDayText]}>
+                    {item.getDate()}
+                </Text>
+
+                {/**DISPLAY THE ABBREVIATED MONTH */}
+                <Text style={[styles.sqaureWeekdayText, isCurrentDate && styles.squareCurrentWeekdayText]}>
+                    {item.toLocaleDateString('en-US', {weekday: 'short'})}
+                </Text>
+            </View>
+        )
+    }
+
+
     return(
         <SafeAreaView
             style={{flex: 1, backgroundColor: colors.background2}}
