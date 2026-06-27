@@ -29,6 +29,10 @@ function Homepage({ route, navigation}){
         boldNanum: require('../assets/font/nanumgothic/NanumGothic-ExtraBold.ttf'), // bold inter font
         regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
     });
+
+    //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
+
     
     return(
         <SafeAreaView
