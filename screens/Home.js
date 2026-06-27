@@ -33,6 +33,16 @@ function Homepage({ route, navigation}){
     //color theme when turning on the dark mode
     const {colors} = useContext(ThemeContext);
 
+    //set declaration use state for information extraction
+    const [weather, setWeather] = useState(null); //set weather
+    const [icon, setIcon] = useState(null); //set icon
+    const today = new Date(); //set today date
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}; //show year, month and day
+    const formattedDate = today.toLocaleDateString('en-Us', options); //handle today date string
+    const weekday = today.toLocaleDateString('en-us', {weekday:'long'}); //handle weekend date string
+    const [selectedDate, setSelectedDate] = useState(new Date());  // selected start time
+    const [tasks, setTasks] = useState([]); //set tasks
+
     
     return(
         <SafeAreaView
