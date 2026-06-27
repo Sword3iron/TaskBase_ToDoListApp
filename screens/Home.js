@@ -124,13 +124,26 @@ function Homepage({ route, navigation}){
         console.log('Fetching Tasks For: ', userId, formattedDate)
     }
 
+    //function to deminate the style based on task progress
+    const getProgressStyle = (taskProgress) => {
+        switch(taskProgress){
+            case 'completed':
+                return{ backgroundColor: '#00a608'}; //Green for completed
+            case 'incompleted':
+                return{ backgroundColor: '#e60000'}; //Red for incomplete
+            case 'inProgress':
+                return{ backgroundColor: '#e69900'}; //Orange for in progress         
+            case 'cancelled':
+                return{ backgroundColor: '#454545'}; //Grey for cancelled   
+        }
+    }
 
 
 
 
 
 
-    
+
     return(
         <SafeAreaView
             style={{flex: 1, backgroundColor: colors.background2}}
