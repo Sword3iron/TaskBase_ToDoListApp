@@ -190,8 +190,6 @@ function Homepage({ route, navigation}){
         return "cloudy-night-outline"; //night
     };
 
-
-
     return(
         <SafeAreaView
             style={{flex: 1, backgroundColor: colors.background2}}
