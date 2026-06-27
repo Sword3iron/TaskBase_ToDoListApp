@@ -143,7 +143,52 @@ function Homepage({ route, navigation}){
         fetchTaskData(selectedDate); //fetch task data
     }, [selectedDate]);  //display array of selected date
 
+    //use effect hook to fetch tasks whenever selectedDate changes
+    useEffect(() => {
+        fetchTaskData(selectedDate); //fetch task data
+    }, [selectedDate]);  //display array of selected date
+    
+    //use effect hook to fetch weather API
+    useEffect(() => {
+        const fetchWeather = async () => {
 
+            //use coordination
+            const params = {
+                latitude: 3.139,
+                longitude: 101.6869,
+                current: ["temperature_2m", "weather_code"],
+            };
+
+            //Call weather API
+            fetchWeatherApi("https://api.open-meteo.com/v1/forecast", params)
+                .then((responses) => {
+                    const response = responses[0]; //got first response
+                    const current = response.current(); //acces current weather data
+                    const tmp = current.variables(0).value();  //Temperature value
+                    const weaCode = current.variables(1).value();  //weather code
+                    
+                    setWeather(`${tmp.toFixed(1)} °C`); //save temperature
+                    setIcon(getWeatherIcon(weaCode)); //set weather icon based on code
+            })
+            .catch((error) => {
+                //handle network or other errors
+                console.error("Weather fetching failed: ", error);
+            });
+        };
+        //call fetch when component mounts
+        fetchWeather();
+    }, []); //empty dependency array
+
+    //function to select weather icon based on weather code
+    const getWeatherIcon = (code) => {
+        if ([0].includes(code)) return "sunny"; //sky
+        if ([1, 2, 3].includes(code)) return "partly-sunny"; //partly-sunny
+        if ([45, 48].includes(code)) return "cloudy"; //cloudy
+        if ([51, 61, 80].includes(code)) return "rainy"; //rain
+        if ([71, 73, 75, 85, 86].includes(code)) return "snow"; //snow
+        if ([95, 96, 99].includes(code)) return "thunderstorm"; //storm
+        return "cloudy-night-outline"; //night
+    };
 
 
 
