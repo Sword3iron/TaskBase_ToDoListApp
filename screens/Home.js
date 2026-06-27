@@ -43,6 +43,15 @@ function Homepage({ route, navigation}){
     const [selectedDate, setSelectedDate] = useState(new Date());  // selected start time
     const [tasks, setTasks] = useState([]); //set tasks
 
+    //for clicking the profile page by tapping on profile picture
+    const handleProfilePage = () =>{
+        navigation.navigate('Profile', {userId, username, profilePic}); //navigate to profile page, passing parameters
+    };
+
+    //for clicking the Add Task Page by navigating to its screen
+    const handleAddTask = () =>{
+        navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to task page, passing parameters
+    }; 
     
     return(
         <SafeAreaView
