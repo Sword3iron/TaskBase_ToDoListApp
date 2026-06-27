@@ -47,6 +47,32 @@ function AddNewTask({route, navigation}){
     const [selectedStatus, setSelectedStatus] = useState(''); //task status
     const [showPicker, setShowPicker] = useState ({ type: null, mode:'date'}); //catogory picker
 
+    //this is used to show the catogory dropdown for choosing start and end time & date
+    const openPicker = (type, mode) => {
+        setShowPicker({type, mode}); //set the time and date picker
+    };
+
+    //handles the change event when a data ad time is selected from the picker
+    const onChange = (event, selectedDate) => { 
+        if (selectedDate) {
+            switch(showPicker.type){ //determine which picker was used, data or time and update the corresponding state
+                case 'startTime':
+                    setStartTime(selectedDate); //set start time
+                    break;
+                case 'endTime':
+                    setEndTime(selectedDate); //set end tiem
+                    break;
+                case 'startDate':
+                    setStartDate(selectedDate); //set start date
+                    break;
+                case 'endDate':
+                    setEndDate(selectedDate); //set end date
+                    break; //break unexpected cases
+            }
+        }
+        //reset picker type to null and mode to date after selecting time and date
+        setShowPicker({type:null, mode: 'date'});
+    };
 
 }
 
