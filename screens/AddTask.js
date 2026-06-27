@@ -36,6 +36,18 @@ function AddNewTask({route, navigation}){
     //color theme when turning on the dark mode
     const {colors} = useContext(ThemeContext);
 
+    //set declaration use state for information inserting
+    const [taskTitle, setTaskTitle] = useState(''); //task title
+    const [taskDescription, setTaskDescription] = useState(''); //task description
+    const [startTime, setStartTime] = useState(new Date()); // start time
+    const [endTime, setEndTime] = useState(new Date()); // end time
+    const [startDate, setStartDate] = useState(new Date()); // start date
+    const [endDate, setEndDate] = useState(new Date()); //end date
+    const [selectedCategory, setSelectCategory] = useState(''); // task catogory
+    const [selectedStatus, setSelectedStatus] = useState(''); //task status
+    const [showPicker, setShowPicker] = useState ({ type: null, mode:'date'}); //catogory picker
+
+
 }
 
 function EditTask({route, navigation}){
