@@ -81,6 +81,17 @@ function Homepage({ route, navigation}){
         )
     }
 
+    //function to format date object into 'YYYY--MM--DD' string for database queries
+    const formattedDateDBTask = (date) => {
+        return date.toISOString().split('T')[0]; //ISO string slicing to get date part
+    };
+    const [refreshing, setRefreshing] = useState(false); //state to refresh
+    const onRefresh = async () =>{
+        setRefreshing(true); //show refresh indicator
+        await fetchTaskData(selectedDate); //fetch task based on today date
+        setRefreshing(false); //disabled refresh indicator
+    };
+
 
     return(
         <SafeAreaView
