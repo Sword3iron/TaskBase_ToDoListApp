@@ -92,7 +92,45 @@ function Homepage({ route, navigation}){
         setRefreshing(false); //disabled refresh indicator
     };
 
+    //function to fetch task for a specific date
+    const fetchTaskData = async(date) =>{
+        //formate date for backend
+        const formattedDate = formattedDateDBTask(date);
+        //fetch task data from API mySQL
+        fetch('http://192.168.1.115/taskbaseapp/getTask.php',{
+            method: 'POST', //use method post
+            headers: { 'Content-Type' : 'application/JSON' }, //JSON content
+            body: JSON.stringify({ //convert data to JSON string
+                userId: userId, //userId
+                date: formattedDate //formatted Date
+            }),
+        })
+        .then(response => response.json()) //parse JSON response
+        .then(data => {
+            if(data.success){
+                //if server success, show alert message
+                setTasks(data.tasks);
+            }else{
+                //if failed, show error message
+                console.error('Task Fetch Failed', error);
+            }
+        })
+        .catch(error => {
+             //handle network or other errors
+            console.error(error);
+            Alert.alert('Error', 'Something Went Wrong');
+        });
+        //debugging on fetch tasks from mySql
+        console.log('Fetching Tasks For: ', userId, formattedDate)
+    }
 
+
+
+
+
+
+
+    
     return(
         <SafeAreaView
             style={{flex: 1, backgroundColor: colors.background2}}
