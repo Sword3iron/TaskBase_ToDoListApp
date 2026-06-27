@@ -17,9 +17,21 @@ function EditTask({route, navigation}){
 
 }
 
+/***************************************************************/
+///******************ADD TASK STACK PAGES*********************///
+/***************************************************************/
+
 function AddTaskPage({route})
 {
+    const {userId, username, profilePic, task} = route.params; //pass parameters for both profile page and tasks
 
+    //**STACK PAGES FOR EDIT AND ADD TASKS */
+    return(
+        <Stack.Navigator screenOptions={{ headerShown:false }}>
+            <Stack.Screen name="AddNewTask" component={AddNewTask} initialParams={{userId, username, profilePic}}/>
+            <Stack.Screen name="EditTask" component={EditTask} initialParams={{userId, username, profilePic, task}}/>
+        </Stack.Navigator>
+    )
 }
 
 export default AddTaskPage;
