@@ -74,6 +74,10 @@ function AddNewTask({route, navigation}){
         setShowPicker({type:null, mode: 'date'});
     };
 
+    //formats a both date and time into a locale-specific tring
+    const formatDate = (date) => date.toLocaleDateString(); //formate the date
+    const formatTime = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}); //format the time
+
 }
 
 function EditTask({route, navigation}){
