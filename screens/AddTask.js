@@ -397,6 +397,11 @@ function EditTask({route, navigation}){
                 date.setHours(hours, minutes, 0, 0); //set hours, minutes and second milliseconds
                 return date; //return date
             };
+
+            //set start time and end time based on task data
+            setStartTime(parseTime(task.startTime)); //start tine
+            setEndTime(parseTime(task.endTime)); //end time
+            
         }
     }, [task]);
 }
