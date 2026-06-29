@@ -201,7 +201,53 @@ function AddNewTask({route, navigation}){
                         onChangeText={setTaskDescription}
                     />
 
+                    {/**TIME*/}
+                    <Text style={[styles.subTitle, {color:colors.text}]}>TIME</Text>
+                    <View style={styles.taskAddingRow}>
+                        <TouchableOpacity 
+                            style={styles.smallInput}
+                            onPress={() => openPicker('startTime', 'time')}>
+                                <Text>{formatTime(startTime)}</Text>
+                        </TouchableOpacity>
+                        <FontAwesome name='forward' size={10} color="#8f8f8f" style={{marginTop: 15}}/>
+                        <TouchableOpacity 
+                            style={styles.smallInput}
+                            onPress={() => openPicker('endTime', 'time')}>
+                                <Text>{formatTime(endTime)}</Text>
+                        </TouchableOpacity>
+                    </View>
 
+                    {/**DATE*/}
+                    <Text style={[styles.subTitle, {color:colors.text}]}>DATE</Text>
+                    <View style={styles.taskAddingRow}>
+                        <TouchableOpacity 
+                            style={styles.smallInput}
+                            onPress={() => openPicker('startDate', 'date')}>
+                                <Text>{formatDate(startDate)}</Text>
+                        </TouchableOpacity>
+                        <FontAwesome name='forward' size={10} color="#8f8f8f" style={{marginTop: 15}}/>
+                        <TouchableOpacity 
+                            style={styles.smallInput}
+                            onPress={() => openPicker('endDate', 'date')}>
+                                <Text>{formatDate(endDate)}</Text>
+                        </TouchableOpacity>
+                    </View>
+                    {showPicker.type && (
+                        <DateTimePicker
+                            value={
+                                showPicker.type === 'startTime' ? startTime :
+                                showPicker.type === 'endTime' ? endTime :
+                                showPicker.type === 'startDate' ? startDate :
+                                endDate
+                            }
+                            mode = {showPicker.mode}
+                            display={Platform.OS === 'android' ? 'spinner' : 'default'}
+                            onChange={onChange}
+                        />
+                    )}
+
+
+                    
                 </ScrollView>
             </View>
         </View>
