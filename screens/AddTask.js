@@ -78,6 +78,14 @@ function AddNewTask({route, navigation}){
     const formatDate = (date) => date.toLocaleDateString(); //formate the date
     const formatTime = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}); //format the time
 
+    //fucntion to handle the logic on adding the task to the database
+    const handleAddingTask = () => {
+
+
+
+        
+    }
+
 }
 
 function EditTask({route, navigation}){
