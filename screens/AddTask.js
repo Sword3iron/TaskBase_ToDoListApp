@@ -366,6 +366,11 @@ function EditTask({route, navigation}){
          //reset picker type to null and mode to date after selecting time and date
         setShowPicker({type:null, mode: 'date'});
     };
+    
+    //use effect hook that runs when the task object changes
+    useEffect(() => {
+
+    }, [task]);
 }
 
 /***************************************************************/
