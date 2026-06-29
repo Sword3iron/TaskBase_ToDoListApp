@@ -565,6 +565,21 @@ function EditTask({route, navigation}){
                         />
                     )}
 
+                    {/**CATOGORY */}
+                    <Text style={[styles.subTitle, {color:colors.text}]}>Catogory</Text>
+                    <View style={styles.pickerContainer}>
+                        <Picker
+                            selectedValue = {selectedCategory}
+                            onValueChange = {(itemValue) => setSelectCategory(itemValue)}
+                            style={styles.TextInput}
+                        >
+                            <Picker.Item label = "Select Category" value="" />
+                            <Picker.Item label = "Personal" value="personal" />
+                            <Picker.Item label = "Work" value="work" />
+                            <Picker.Item label = "Sport" value="sport" />
+                            <Picker.Item label = "Outside" value="outside" />
+                        </Picker>
+                    </View>
                 </ScrollView>
 
             </View>
