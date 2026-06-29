@@ -262,6 +262,22 @@ function AddNewTask({route, navigation}){
                         </Picker>
                     </View>
 
+                    {/**STATUS*/}
+                    <Text style={[styles.subTitle, {color:colors.text}]}>Status</Text>
+                    <View style={styles.pickerContainer}>
+                        <Picker
+                            selectedValue = {selectedStatus}
+                            onValueChange = {(itemValue) => setSelectedStatus(itemValue)}
+                            style={styles.TextInput}
+                        >
+                            <Picker.Item label = "Select Status" value="" />
+                            <Picker.Item label = "Cancelled" value="cancelled" />
+                            <Picker.Item label = "In Progress" value="inProgress" />
+                            <Picker.Item label = "Completed" value="completed" />
+                            <Picker.Item label = "Incompleted" value="Incompleted" />
+                        </Picker>
+                    </View>
+
 
                 </ScrollView>
             </View>
