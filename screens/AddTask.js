@@ -81,9 +81,23 @@ function AddNewTask({route, navigation}){
     //fucntion to handle the logic on adding the task to the database
     const handleAddingTask = () => {
 
+        //helper function to formate date object string for database storage
+        const formatDateForDB = (date) => {
+            const year = date.getFullYear(); //extracting full year
+            const month = String(date.getMonth() + 1).padStart(2, '0'); //get month
+            const day = String(date.getDate()).padStart(2, '0'); //get day of month, pad with landing zero if needed
+            return `${year}-${month}-${day}`; //return formatted date string in 'Years-Month-Day' format
+        }
+
+        //helper function to formate date object string for database storage
+        const formatTimeForDB = (date) => {
+            const hours = String(date.getHours()).padStart(2, '0'); //extract hours
+            const minutes = String(date.getMinutes()).padStart(2, '0'); //extract minutes
+            const seconds = String(date.getSeconds()).padStart(2, '0'); //extract seconds
+            return `${hours}:${minutes}:${seconds}`; //return formatted date string in 'hours-Minutes-Seconds' format
+        }
 
 
-        
     }
 
 }
