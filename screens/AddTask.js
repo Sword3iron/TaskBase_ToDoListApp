@@ -369,7 +369,23 @@ function EditTask({route, navigation}){
     
     //use effect hook that runs when the task object changes
     useEffect(() => {
+        if (task){
 
+             //debug task data
+            console.log("Task log: ", task)
+
+            //initialize fields with existing content from task data
+            //fall back to empty strings when data is empty
+            setTaskTitle(task.taskTitle || '');  //task title
+            setTaskDescription(task.taskDescription || ''); //task description
+
+            //parse date string into date object
+            const parseDate = (dateString) => {
+                if(!dateString) return new Date(); //return current date into date string
+                const [year, month, day] = dateString.split('-').map(Number); //split and convert them into number
+                return new Date(year, month - 1, day); //return 0 based in date constructor
+            };
+        }
     }, [task]);
 }
 
