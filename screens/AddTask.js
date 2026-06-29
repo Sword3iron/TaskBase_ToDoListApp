@@ -137,6 +137,18 @@ function AddNewTask({route, navigation}){
         console.log("Sending to PHP: ", taskData)
     };
 
+    //reset the text fields
+    const resetText = () =>{
+        setTaskTitle(''), //task title
+        setTaskDescription('');  //task description
+        setStartTime(new Date()); //start time
+        setEndTime(new Date()); //end time
+        setStartDate(new Date()); //start date
+        setEndDate(new Date()); //end date
+        setSelectCategory(''), //selected catogory
+        setSelectedStatus(''); //selected status
+    }
+
 }
 
 function EditTask({route, navigation}){
