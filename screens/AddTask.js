@@ -109,6 +109,32 @@ function AddNewTask({route, navigation}){
             taskCategory: selectedCategory, //selected catogory
             taskProgress: selectedStatus, //selected status
         };
+
+        //send task data to API mySQL
+        fetch('http://192.168.1.115/taskbaseapp/insertTask.php',{
+            method: 'POST', //use method post
+            headers: { 'Content-Type' : 'application/JSON' }, //JSON content type
+            body: JSON.stringify(taskData), //convert data to JSON string
+        })
+        .then(response => response.json()) //parse JSON response
+        .then(data => { 
+            if(data.success){
+                //if server success, show alert message
+                Alert.alert('Success', 'You have a new tasks to do! get on with it!');
+                resetText(); //reset input text after submittng
+                navigation.navigate('Home'); //navigate to home page afterwards
+            }else{
+                //if failed, show error message 
+                Alert.alert('Error', 'Task Add Failed');
+            }
+        })
+        .catch(error => {
+            //handle network or other errors
+            console.error(error);
+            Alert.alert('Error', 'Something Went Wrong');
+        });
+        //debugging data process
+        console.log("Sending to PHP: ", taskData)
     }
 
 }
