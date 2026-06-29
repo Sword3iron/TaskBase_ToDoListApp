@@ -385,6 +385,18 @@ function EditTask({route, navigation}){
                 const [year, month, day] = dateString.split('-').map(Number); //split and convert them into number
                 return new Date(year, month - 1, day); //return 0 based in date constructor
             };
+
+            //set start and end dates based on the task data received
+            setStartDate(parseDate(task.startDate)); //parse start date
+            setEndDate(parseDate (task.endDate)); //parse end datw
+            
+            //parse date string into time object
+            const parseTime = (timeString) => {
+                const [hours, minutes] = timeString.split(':').map(Number); //split and convert them into number
+                const date = new Date (); //return current time into date string
+                date.setHours(hours, minutes, 0, 0); //set hours, minutes and second milliseconds
+                return date; //return date
+            };
         }
     }, [task]);
 }
