@@ -97,7 +97,18 @@ function AddNewTask({route, navigation}){
             return `${hours}:${minutes}:${seconds}`; //return formatted date string in 'hours-Minutes-Seconds' format
         }
 
-
+        //construct the task data to send the data to the backend
+        const taskData = { 
+            userId: userId, //user id
+            taskTitle, //task title
+            taskDescription, //task description
+            startDate: formatDateForDB(startDate), //formatted start date
+            endDate: formatDateForDB(endDate), //formatted end date
+            startTime: formatTimeForDB(startTime), //formatted start time
+            endTime: formatTimeForDB(endTime), //formatted end time
+            taskCategory: selectedCategory, //selected catogory
+            taskProgress: selectedStatus, //selected status
+        };
     }
 
 }
