@@ -135,7 +135,7 @@ function AddNewTask({route, navigation}){
         });
         //debugging data process
         console.log("Sending to PHP: ", taskData)
-    }
+    };
 
 }
 
