@@ -173,6 +173,11 @@ function AddNewTask({route, navigation}){
                     </TouchableOpacity>
                 </View>
 
+                {/**TITLE */}
+                <Text style={[styles.addTaskTitle,{color:colors.text}]}>
+                        Create New Task
+                </Text>
+
             </View>
         </View>
     )
