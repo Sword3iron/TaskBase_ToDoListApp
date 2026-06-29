@@ -149,6 +149,12 @@ function AddNewTask({route, navigation}){
         setSelectedStatus(''); //selected status
     }
 
+    return(
+        <View>
+            
+        </View>
+    )
+
 }
 
 function EditTask({route, navigation}){
