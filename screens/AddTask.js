@@ -464,6 +464,10 @@ function EditTask({route, navigation}){
         })
     };
 
+    //formats a both date and time into a locale-specific string
+    const formatDate = (date) => date.toLocaleDateString();  //formate the date
+    const formatTime = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}); //format the time
+
 }
 
 /***************************************************************/
