@@ -278,6 +278,22 @@ function AddNewTask({route, navigation}){
                         </Picker>
                     </View>
 
+                    {/**BUTTON*/}
+                    <TouchableOpacity
+                        style = {styles.cancelNavigation}
+                        onPress={() => {
+                            resetText();
+                            navigation.goBack();
+                        }}
+                    >
+                        <Text style = {styles.buttonText}>Cancel</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style = {styles.submitNavigation}
+                        onPress={handleAddingTask}
+                    >
+                        <Text style = {styles.buttonText}>Submit</Text>
+                    </TouchableOpacity>
 
                 </ScrollView>
             </View>
