@@ -401,7 +401,11 @@ function EditTask({route, navigation}){
             //set start time and end time based on task data
             setStartTime(parseTime(task.startTime)); //start tine
             setEndTime(parseTime(task.endTime)); //end time
-            
+
+            //set catogory and status,
+            //fallback to empty string is undefined
+            setSelectCategory(task.taskCategory || ''); //task category
+            setSelectedStatus(task.taskProgress || ''); //task status
         }
     }, [task]);
 }
