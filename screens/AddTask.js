@@ -178,6 +178,20 @@ function AddNewTask({route, navigation}){
                         Create New Task
                 </Text>
 
+                {/**TEXT FIELD */}
+                <ScrollView contentContainerStyle={styles.scrollContainer}>
+
+                    {/**TASK TITLE */}
+                    <Text style={[styles.subTitle,{color:colors.text}]}>Task Title</Text>
+                    <TextInput 
+                        style={styles.taskAddingInput} 
+                        placeholder="Task Title" 
+                        value={taskTitle}
+                        onChangeText={setTaskTitle}
+                    />
+
+
+                </ScrollView>
             </View>
         </View>
     )
