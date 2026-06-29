@@ -509,6 +509,17 @@ function EditTask({route, navigation}){
                         onChangeText={setTaskTitle}
                     />
 
+                    {/**TASK DESCRIPTION */}
+                    <Text style={[styles.subTitle,{color:colors.text}]}>Description</Text>
+                    <TextInput 
+                        style={[styles.taskAddingInput, {height: 200}]} 
+                        placeholder="Description"
+                        multiline 
+                        textAlignVertical='top'
+                        value={taskDescription}
+                        onChangeText={setTaskDescription}
+                    />
+
                 </ScrollView>
 
             </View>
