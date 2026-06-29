@@ -299,11 +299,73 @@ function AddNewTask({route, navigation}){
             </View>
         </View>
     )
-
 }
 
-function EditTask({route, navigation}){
 
+/***************************************************************/
+///********************EDIT TASK SCREEN***********************///
+/***************************************************************/
+
+//This page focus on editing task 
+//it edit and update objective title and description, 
+//start and end time, start and end date, status and progress.
+
+function EditTask({route, navigation}){
+    const { userId, username, profilePic, task } = route.params || {}; //pass parameters for both profile page and username
+    const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
+
+    //load font family from folder
+    const [fontLoaded] = useFonts({
+        lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
+        mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
+        boldInter: require('../assets/font/static/Inter_18pt-Bold.ttf'), // bold inter font
+    })
+
+    //for clicking the profile page by tapping on profile picture
+    const handleProfilePage = () =>{ 
+        navigation.navigate('Profile', {userId, username, profilePic}); //navigate to profile page, passing parameters
+    };
+
+    //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
+    
+    //set declaration use state for information inserting
+    const [taskTitle, setTaskTitle] = useState(''); // task title
+    const [taskDescription, setTaskDescription] = useState(''); //task description
+    const [startTime, setStartTime] = useState(new Date()); //start time
+    const [endTime, setEndTime] = useState(new Date()); //end time
+    const [startDate, setStartDate] = useState(new Date()); //start date
+    const [endDate, setEndDate] = useState(new Date()); //end date
+    const [selectedCategory, setSelectCategory] = useState(''); //task catogory
+    const [selectedStatus, setSelectedStatus] = useState(''); //task status
+    const [showPicker, setShowPicker] = useState ({ type: null, mode:'date'}); //set show picker
+
+    //this is used to show the catogory dropdown for choosing start and end time & date
+    const openPicker = (type, mode) => {
+        setShowPicker({type, mode}); //set time and date picker
+    };
+
+     //handles the change event when a data ad time is selected from the picker
+    const onChange = (event, selectedDate) => { 
+        if (selectedDate) { //determine which picker was used, data or time and update the corresponding state
+            switch(showPicker.type){ 
+                case 'startTime':
+                    setStartTime(selectedDate); //set start time
+                    break;
+                case 'endTime':
+                    setEndTime(selectedDate); //set end time
+                    break;
+                case 'startDate':
+                    setStartDate(selectedDate); //set start date
+                    break;
+                case 'endDate':
+                    setEndDate(selectedDate); //set end date
+                    break; //break unexpected cases
+            }
+        }
+         //reset picker type to null and mode to date after selecting time and date
+        setShowPicker({type:null, mode: 'date'});
+    };
 }
 
 /***************************************************************/
