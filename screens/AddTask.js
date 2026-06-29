@@ -597,8 +597,23 @@ function EditTask({route, navigation}){
                         </Picker>
                     </View>
 
-                </ScrollView>
+                    {/**BUTTON */}
+                    <TouchableOpacity
+                        style = {styles.cancelNavigation}
+                        onPress={() => {
+                            navigation.navigate('Home');
+                        }}
+                    >
+                        <Text style = {styles.buttonText}>Cancel</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style = {styles.submitNavigation}
+                        onPress={handleUpdateTask}
+                    >
+                        <Text style = {styles.buttonText}>Submit</Text>
+                    </TouchableOpacity>
 
+                </ScrollView>
             </View>
         </View>
     )
