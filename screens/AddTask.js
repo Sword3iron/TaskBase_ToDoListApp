@@ -408,6 +408,12 @@ function EditTask({route, navigation}){
             setSelectedStatus(task.taskProgress || ''); //task status
         }
     }, [task]);
+
+    //fucntion to handle the logic on adding the task to the database
+    const handleUpdateTask = () => {
+
+    };
+
 }
 
 /***************************************************************/
