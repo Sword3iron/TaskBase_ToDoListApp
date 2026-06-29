@@ -442,6 +442,26 @@ function EditTask({route, navigation}){
             taskProgress: selectedStatus, //selected status
         };
 
+        //send task data to API mySQL
+        fetch('http://192.168.1.115/taskbaseapp/editTask.php', {
+            method: 'POST', //use method post
+            headers: {'Content-Type':'application/json'}, //JSON content type
+            body: JSON.stringify(taskData),  //convert data to JSON string
+        })
+        .then(response => response.json()) //parse JSON response
+        .then(data => {
+            if(data.success){
+                //if server success, show alert message
+                Alert.alert('Updated!', 'Task updated!');
+                //navigate to home page afterwards
+                navigation.navigate('Task',{
+                    screen: 'TaskList'
+                });
+            }else{
+                //if failed, show error message 
+                Alert.alert('Error', data.error || 'Update failed');
+            }
+        })
     };
 
 }
