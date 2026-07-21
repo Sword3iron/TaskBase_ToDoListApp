@@ -17,8 +17,13 @@ const Stack = createStackNavigator(); //Set navigation
 
 function CalendarPage({route, navigation})
 {
-
-
+    const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
+    const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
+    
+    //for clicking the profile page by tapping on profile picture
+    const handleProfilePage = () =>{
+        navigation.navigate('Profile', {userId, username, profilePic});
+    }; 
 
     return(
         <View style>
