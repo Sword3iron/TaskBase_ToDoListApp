@@ -129,6 +129,29 @@ function CalendarPage({route, navigation})
             incompleted: 0, //incompleted
             cancelled: 0 //cancelled
         };
+
+        //loop through each task and increment relevant count based on task progress
+        tasks.forEach((task) => {
+            switch(task.taskProgress){
+                case "completed": //completed
+                    counts.completed++;
+                    break;
+                case "inProgress": //in progress
+                    counts.inProgress++;
+                    break;
+                case "incompleted": //incompleted
+                    counts.incompleted++;
+                    break;
+                case "cancelled": //cancelled
+                    counts.cancelled++;
+                    break;
+                default:
+                    break; //ignore other values
+            }
+        });
+
+        const total = tasks.length; //total number of tasks
+
     };
 
     
