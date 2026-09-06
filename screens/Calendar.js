@@ -121,6 +121,14 @@ function CalendarPage({route, navigation})
             });
             return; //return earl when there is no tasks.
         }
+
+        //initialize counts for each task status
+        let counts = { 
+            completed: 0,  //completed
+            inProgress: 0, //in progress
+            incompleted: 0, //incompleted
+            cancelled: 0 //cancelled
+        };
     };
 
     
