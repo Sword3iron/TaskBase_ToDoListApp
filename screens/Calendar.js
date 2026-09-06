@@ -164,7 +164,7 @@ function CalendarPage({route, navigation})
         });
     };
 
-    //fucntion to mark dates on a calander based on task start dates and their status
+    //function to mark dates on a calander based on task start dates and their status
     const markDatesByStatus = (tasks) => {
         let marks = {}; //objects to hold the key of dot indicators
 
