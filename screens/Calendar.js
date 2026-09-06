@@ -164,7 +164,32 @@ function CalendarPage({route, navigation})
         });
     };
 
-    
+    //fucntion to mark dates on a calander based on task start dates and their status
+    const markDatesByStatus = (tasks) => {
+        let marks = {}; //objects to hold the key of dot indicators
+
+        //loop through each task 
+        tasks.forEach(task => {
+            const date = task.startDate; //use task starting date
+            //if the data entry doesn't exist
+            if (!marks[date]){ 
+                marks[date] = { dots: []};
+            }
+
+            //Add a dot for the task's progress status if not already added
+            if(!marks[date].dots.some(d=> d.key === task.taskProgress)){
+                marks[date].dots.push({
+                    key: task.taskProgress, //key based on task progress
+                    color: colorStatus[task.taskProgress], //color based on status
+                    selectedDotColor:"#f3ff4f" //dor color when selected
+                });
+            }
+        });
+        setMarkedDates(marks); //update state with marked dates
+    }  
+
+
+
     return(
         <View style>
 
