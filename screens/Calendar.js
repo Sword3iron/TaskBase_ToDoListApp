@@ -83,7 +83,7 @@ function CalendarPage({route, navigation})
         });
     }
 
-  //function used to get daily task data
+    //function used to get daily task data
     const fetchTasks = async (date) => {
          //fetch task data from API mySQL
         fetch("http://192.168.1.115/taskbaseapp/getTask.php", {
@@ -107,6 +107,11 @@ function CalendarPage({route, navigation})
             Alert.alert('Error', 'Something Went Wrong');
         });
     }
+
+    //function to calculate the percentage of tasks in each progress status
+    const calculatePercentage = (tasks) => {
+      
+    };
 
     
     return(
