@@ -23,7 +23,16 @@ function CalendarPage({route, navigation})
     //for clicking the profile page by tapping on profile picture
     const handleProfilePage = () =>{
         navigation.navigate('Profile', {userId, username, profilePic});
-    }; 
+    };
+    
+    //load font family from folder
+    const [fontLoaded] = useFonts({
+        lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
+        mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
+        boldInter: require('../assets/font/static/Inter_18pt-Bold.ttf'), // bold inter font
+        boldNanum: require('../assets/font/nanumgothic/NanumGothic-ExtraBold.ttf'), // bold inter font
+        regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
+    });
 
     return(
         <View style>
