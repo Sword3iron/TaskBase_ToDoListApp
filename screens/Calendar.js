@@ -188,6 +188,15 @@ function CalendarPage({route, navigation})
         setMarkedDates(marks); //update state with marked dates
     }  
 
+    //use effect runs once a compoenent mount
+    useEffect(() => {
+        const today = new Date().toISOString().split("T")[0]; //get today date 
+        fetchTasks(today); //fetch task for today
+
+        const month = today.substring(0, 7); //extract 'YYYY-MM' for the current month
+        fetchMonthlyTasks(month); //fetch tasks for the current month
+    }, []); //empty dependency aray ensures it runs only once
+
 
 
     return(
