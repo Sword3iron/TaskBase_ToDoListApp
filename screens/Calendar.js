@@ -110,7 +110,17 @@ function CalendarPage({route, navigation})
 
     //function to calculate the percentage of tasks in each progress status
     const calculatePercentage = (tasks) => {
-      
+        //handles cases where there are no tasks
+        if (tasks.length === 0){
+            //set defaut stats: 100% completed, others 0%
+            setTaskAnalysisStats({
+                completed: 100, //completed
+                inProgress: 0, //in progress
+                incompleted: 0, //incompleted
+                cancelled: 0 //cancelled
+            });
+            return; //return earl when there is no tasks.
+        }
     };
 
     
