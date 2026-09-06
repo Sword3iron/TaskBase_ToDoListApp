@@ -203,6 +203,14 @@ function CalendarPage({route, navigation})
         fetchMonthlyTasks(month.dateString.substring(0, 7)); //extracr 'YYYY-MM' from the selected month dateString
     }
     
+    //function to irefresh tasks, pull to refresh
+    const onRefresh = useCallback(() => {
+        setRefreshing(true); //show refresh indicator
+        fetchTasks(new Date().toISOString().split("T")[0]) //fetch today tasks
+            .finally(() => setRefreshing(false)); //hide refresh indicator when done
+    }, []); //momorize callback to avoid re-creating on each render
+
+
 
     return(
         <View style>
