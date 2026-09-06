@@ -34,6 +34,11 @@ function CalendarPage({route, navigation})
         regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
     });
 
+    //for clicking the profile page by tapping on profile picture
+    const handleAddTask = () =>{
+        navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to profile page, passing parameters
+    };
+
     return(
         <View style>
 
