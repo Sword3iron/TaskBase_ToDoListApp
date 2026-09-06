@@ -39,6 +39,26 @@ function CalendarPage({route, navigation})
         navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to profile page, passing parameters
     };
 
+     //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
+
+     //set declaration use state for information inserting
+    const [refreshing, setRefreshing] = useState(false); //set refreshing
+    const [taskAnalysisStats, setTaskAnalysisStats] = useState({ //set analysis stats
+        completed: 0, //completed
+        inProgress: 0, //in progress
+        incompleted: 0, //incompleted
+        cancelled: 0, //cancelled
+    });
+    const [markedDates, setMarkedDates] = useState({});  //set marked dates
+    const colorStatus ={ //set color status
+        completed: "#4caf50", //green
+        inProgress: "#ffc107", //brown
+        incompleted: "#f44333", //red
+        cancelled: "#9e9e9e", //black
+    }
+
+    
     return(
         <View style>
 
