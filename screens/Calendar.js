@@ -211,9 +211,8 @@ function CalendarPage({route, navigation})
     }, []); //momorize callback to avoid re-creating on each render
 
 
-
     return(
-        <View style>
+        <View style={styles.container}>
 
         </View>
     );
