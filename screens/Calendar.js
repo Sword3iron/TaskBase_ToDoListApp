@@ -198,6 +198,11 @@ function CalendarPage({route, navigation})
     }, []); //empty dependency aray ensures it runs only once
 
 
+    //function to handle the month change in calander view
+    const onMonthChange = (month) => {
+        fetchMonthlyTasks(month.dateString.substring(0, 7)); //extracr 'YYYY-MM' from the selected month dateString
+    }
+    
 
     return(
         <View style>
