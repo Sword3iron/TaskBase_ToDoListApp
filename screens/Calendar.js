@@ -58,7 +58,7 @@ function CalendarPage({route, navigation})
         cancelled: "#9e9e9e", //black
     }
 
-  //function used to get monthly task data
+    //function used to get monthly task data
     const fetchMonthlyTasks = async (month) => {
         //fetch task data from API mySQL
         fetch("http://192.168.1.115/taskbaseapp/getMonthlyTask.php", {
@@ -74,6 +74,31 @@ function CalendarPage({route, navigation})
             }else{
                 //if failed, show error message 
                 console.error('Monthly Task Fetch Failed', error);
+            }
+        })
+        .catch(error => {
+            //handle network or other errors
+            console.error(error);
+            Alert.alert('Error', 'Something Went Wrong');
+        });
+    }
+
+  //function used to get daily task data
+    const fetchTasks = async (date) => {
+         //fetch task data from API mySQL
+        fetch("http://192.168.1.115/taskbaseapp/getTask.php", {
+            method: "POST",  //use method post
+            headers: {"Content-Type" : "application/json"}, //JSON content
+            body: JSON.stringify({ userId, date}), //convert data to JSON string
+        })
+        .then(response => response.json()) //parse JSON response
+        .then(data => {
+            if(data.success){
+                //if server success, show alert message
+                calculatePercentage(data.tasks); //engaging marking date function
+            }else{
+                //if failed, show error message
+                console.error('Task Fetch Failed', error);
             }
         })
         .catch(error => {
