@@ -152,6 +152,16 @@ function CalendarPage({route, navigation})
 
         const total = tasks.length; //total number of tasks
 
+        //calculate percentage of each status and update state
+        //calculate by dividing the number of task to total number times 100.
+        setTaskAnalysisStats({
+            completed: Math.round((counts.completed/total) * 100), //completed
+            inProgress: Math.round((counts.inProgress/total) * 100), //in progress
+            incompleted: Math.round((counts.incompleted/total) * 100), //incompleted
+            cancelled: Math.round((counts.cancelled/total) * 100), //cancelled
+            total:total, //total
+            completedCount: counts.completed, //completed counting
+        });
     };
 
     
