@@ -58,6 +58,31 @@ function CalendarPage({route, navigation})
         cancelled: "#9e9e9e", //black
     }
 
+  //function used to get monthly task data
+    const fetchMonthlyTasks = async (month) => {
+        //fetch task data from API mySQL
+        fetch("http://192.168.1.115/taskbaseapp/getMonthlyTask.php", {
+            method: "POST", //use method post
+            headers: {"Content-Type" : "application/json"}, //JSON content
+            body: JSON.stringify({ userId, month}), //convert data to JSON string
+        })
+        .then(response => response.json()) //parse JSON response
+        .then(data => {
+            if(data.success){
+                //if server success, show alert message
+                markDatesByStatus(data.tasks); //engaging marking date function
+            }else{
+                //if failed, show error message 
+                console.error('Monthly Task Fetch Failed', error);
+            }
+        })
+        .catch(error => {
+            //handle network or other errors
+            console.error(error);
+            Alert.alert('Error', 'Something Went Wrong');
+        });
+    }
+
     
     return(
         <View style>
