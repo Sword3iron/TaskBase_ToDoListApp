@@ -268,4 +268,27 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 
+    welcomeText:{
+        color: "#646464",
+        fontSize: 14,
+    },
+
+    headerRow:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%',
+        paddingHorizontal: 20,
+        marginTop: 20,
+    },
+
+    addTaskTitle: {
+        fontSize: 15,
+        fontFamily: 'boldInter',
+        paddingHorizontal: 25,
+        marginTop: 35,
+        paddingBottom: 15,
+        textAlign: 'left'
+    },
+
 })
