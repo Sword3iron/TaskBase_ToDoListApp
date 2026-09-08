@@ -243,4 +243,29 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    profileImage:{
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        borderColor: '#589940',
+        borderWidth: 3,
+    },
+
+    avatarCircle:{
+        width: 40,
+        height: 40,
+        borderRadius: 30,
+        backgroundColor: '#4A90E2',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        borderWidth: 0.9,
+    },
+
+    avatarText:{
+        fontSize: 24,
+        color: '#ffffff',
+        fontWeight: 'bold',
+    },
+
 })
