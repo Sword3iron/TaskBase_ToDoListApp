@@ -222,5 +222,25 @@ function CalendarPage({route, navigation})
 export default CalendarPage;
 
 const styles = StyleSheet.create({
-    
+
+    //NORMAL
+    container:{
+        flex: 1,
+    },
+
+    screenContainer:{
+        flex: 1,
+        paddingTop: 10,
+        alignItem: 'center',
+        backgroundColor: '#ffffff'
+    },
+
+    profileImageContainer:{
+        width: 60,
+        height: 60,
+        borderRadius: "50%",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
 })
