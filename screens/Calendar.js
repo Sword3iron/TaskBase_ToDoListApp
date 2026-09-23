@@ -223,7 +223,7 @@ export default CalendarPage;
 
 const styles = StyleSheet.create({
 
-    //Normal
+    //NORMAL
     container:{
         flex: 1,
     },
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
 
-    //Plus Button
+    //PLUS BUTTON
     floatingButton:{
         position: 'absolute',
         top: 645,
@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
 
-//Calander
+    //CALANDER
     calendarWrapper:{
         overflow: 'hidden',
         borderRadius: 15,
@@ -335,7 +335,7 @@ const styles = StyleSheet.create({
         marginTop: 0,
     },
 
-    //Percentage Box
+    //PERCENTAGE BOXES
     analysisText:{
         paddingVertical: 10,
         fontFamily: 'boldNanum',
@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
 
-    //Small Image category
+    //SMALL IMAGE AND BOX FOR CATEGORY
     smallImage:{
         width: 35,
         height: 35,
