@@ -223,7 +223,7 @@ export default CalendarPage;
 
 const styles = StyleSheet.create({
 
-    //NORMAL
+    //Normal
     container:{
         flex: 1,
     },
@@ -311,6 +311,28 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+    },
+
+//Calander
+    calendarWrapper:{
+        overflow: 'hidden',
+        borderRadius: 15,
+    },
+
+    calendarContainer:{
+        alignItems: 'center',
+        transform: [{scale: 0.75}],
+        marginTop: -40,
+        marginBottom: -20,
+    },
+
+    calendar:{
+        width: 450,
+        height: 370,
+        borderRadius: 16,
+        overflow: 'hidden',
+        alignSelf: 'center',
+        marginTop: 0,
     },
 
 })
