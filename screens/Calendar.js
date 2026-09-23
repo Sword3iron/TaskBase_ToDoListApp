@@ -367,10 +367,39 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
 
- 
+    //Small Image category
     smallImage:{
         width: 35,
         height: 35,
         marginTop: 10,
     },
+
+    labelText:{
+        fontSize: 12,
+        fontFamily: 'regularNanum',
+        textAlign: 'center', 
+        color: "#0000000",
+        marginTop: 2,
+    },
+
+    columnBox:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingHorizontal: 10,
+    },
+
+    analysisHeader:{
+        flexDirection:'row',
+        justifyContent: 'space-between',
+        alignContent: 'center',
+        alignItems: 'center',
+        marginBottom: 8,
+        paddingHorizontal: 13,
+    },
+
+    taskSummary:{
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        backgroundColor: '#ffffff',
+    }
 })
