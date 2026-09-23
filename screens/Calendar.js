@@ -335,4 +335,42 @@ const styles = StyleSheet.create({
         marginTop: 0,
     },
 
+    //Percentage Box
+    analysisText:{
+        paddingVertical: 10,
+        fontFamily: 'boldNanum',
+        fontSize: 16,
+        left: 10,
+    },
+
+    percentagePaddingContainer:{
+        backgroundColor: '#ffffff',
+        paddingHorizontal: 15,
+    },
+
+    percentageContainer:{
+        backgroundColor: 'yellow',
+        paddingHorizontal: 15,
+        paddingVertical: 13,
+        borderRadius: 15,
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,  
+    },
+
+    percentageText:{
+        fontSize: 15,
+        fontFamily: 'mediumInter',
+        textAlign: 'center',
+        marginTop: 5,
+    },
+
+ 
+    smallImage:{
+        width: 35,
+        height: 35,
+        marginTop: 10,
+    },
 })
