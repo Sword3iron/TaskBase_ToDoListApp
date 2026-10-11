@@ -7,6 +7,11 @@ import { ThemeContext } from '../themeColor/ThemeContext';
 import moment from "moment";
 import { LinearGradient } from 'expo-linear-gradient';
 
+const { width } = Dimensions.get('window');
+const Stack = createStackNavigator(); //set navigation 
+
+
+
 
 function TaskPage({ route })
 {
