@@ -10,7 +10,15 @@ import { LinearGradient } from 'expo-linear-gradient';
 const { width } = Dimensions.get('window');
 const Stack = createStackNavigator(); //set navigation 
 
+function TaskCalanderPage({ route, navigation})
+{
 
+}
+
+function TaskList({ route, navigation })
+{
+
+}
 
 
 function TaskPage({ route })
