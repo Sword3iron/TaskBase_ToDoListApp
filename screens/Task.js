@@ -31,6 +31,9 @@ function TaskCalanderPage({ route, navigation})
     const handleAddTask = () =>{
         navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to task page, passing parameters
     };
+    
+     //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
 }
 
 function TaskList({ route, navigation })
