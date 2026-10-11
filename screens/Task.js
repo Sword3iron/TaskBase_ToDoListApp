@@ -10,9 +10,27 @@ import { LinearGradient } from 'expo-linear-gradient';
 const { width } = Dimensions.get('window');
 const Stack = createStackNavigator(); //set navigation 
 
+/***************************************************************/
+///************************TASK PAGE**************************///
+/***************************************************************/
+
+//This is the Task page for application.
+//Here user can view timelines and dealines, check in their today tasks in list
+
 function TaskCalanderPage({ route, navigation})
 {
+    const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
+    const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
 
+    //for clicking the profile page by tapping on profile picture
+    const handleProfilePage = () =>{
+        navigation.navigate('Profile', {username, profilePic});
+    }; 
+
+    //for clicking the profile page by tapping on profile picture
+    const handleAddTask = () =>{
+        navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to task page, passing parameters
+    };
 }
 
 function TaskList({ route, navigation })
