@@ -64,6 +64,11 @@ function TaskCalanderPage({ route, navigation})
             </View>
         )
     }
+
+    const [refreshing, setRefreshing] = useState(false); //state to refresh
+    const [tasks, setTasks] = useState([]); //set tasks
+    const [timeSlots, setTimeSlots] = useState([]); //set time slot
+    console.log("Fetched tasks: ", tasks); //debugging tasks data
 }
 
 function TaskList({ route, navigation })
