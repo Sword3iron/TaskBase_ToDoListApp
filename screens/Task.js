@@ -69,6 +69,19 @@ function TaskCalanderPage({ route, navigation})
     const [tasks, setTasks] = useState([]); //set tasks
     const [timeSlots, setTimeSlots] = useState([]); //set time slot
     console.log("Fetched tasks: ", tasks); //debugging tasks data
+
+    const onRefresh = async () => {
+        setRefreshing(true);  //show refresh indicator
+        await fetchTasks(); //await for task to be fetch in
+        generateTimeSlots(); //generate time slot
+        setRefreshing(false); //disabled refresh indicator
+    }
+    
+    //use effect to hook fetch tasks and generate time slots
+    useEffect(() => {
+        fetchTasks();
+        generateTimeSlots();
+    }, []);
 }
 
 function TaskList({ route, navigation })
