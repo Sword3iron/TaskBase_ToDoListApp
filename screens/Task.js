@@ -226,9 +226,38 @@ function TaskCalanderPage({ route, navigation})
     )
 }
 
+/***************************************************************/
+///*************************TASKLIST**************************///
+/***************************************************************/
 function TaskList({ route, navigation })
 {
+    const { userId, username, profilePic } = route.params;  //pass parameters for both profile page and username
+    const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
 
+    //for clicking the profile page by tapping on profile picture
+    const handleProfilePage = () =>{
+        navigation.navigate('Profile', {userId, username, profilePic});
+    };
+
+    //for clicking the Add Task Page by navigating to its screen
+    const handleAddTask = () =>{
+        navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}});
+    }; 
+    
+    //for clicking the edit Task Page by navigating to its screen
+    const handleEditTask = (task) => {
+        navigation.navigate('AddTask' ,{screen: 'EditTask', params:{userId, username, profilePic, task}});
+    }
+
+    //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
+
+    //load font family from folder
+    const [fontLoaded] = useFonts({
+        lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
+        mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
+        boldInter: require('../assets/font/static/Inter_18pt-Bold.ttf'), // bold inter font
+    });
 }
 
 
