@@ -114,6 +114,14 @@ function TaskCalanderPage({ route, navigation})
             setTasks([]); //set an array of tasks
         });
     }
+
+    //function to extract task for time
+    const getTaskForTime = (slot) => {
+        return tasks.filter(task => { //find the time based on today date
+            let start = moment(task.startTime, ["HH:mm:ss", "YYYY-MM-DD HH:mm:ss"]); //find the task with start time
+            return start.isValid() && start.isSame(slot, 'hour');  //put it on the slot of that time
+        })
+    }
 }
 
 function TaskList({ route, navigation })
