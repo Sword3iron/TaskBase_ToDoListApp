@@ -122,6 +122,14 @@ function TaskCalanderPage({ route, navigation})
             return start.isValid() && start.isSame(slot, 'hour');  //put it on the slot of that time
         })
     }
+
+    return(
+        <View style={styles.container}>
+            <View style={[style.screenContainer, {backgroundColor: colors.background2}]}>
+                
+            </View>
+        </View>
+    )
 }
 
 function TaskList({ route, navigation })
