@@ -150,8 +150,20 @@ function TaskCalanderPage({ route, navigation})
                     </TouchableOpacity>
                 </View>
 
+                {/**DATES */}
+                <TouchableOpacity>
+                    <View style={styles.sqaureCalanderDateContainer}>
+                        <FlatList
+                            data={dates} 
+                            renderItem={renderDateItem}
+                            keyExtractor={(item) => item.toDateString()}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.flatListCalender}
+                        />
+                    </View>
+                </TouchableOpacity>
 
-                
             </View>
         </View>
     )
