@@ -184,7 +184,7 @@ function TaskCalanderPage({ route, navigation})
 
                                     <View style={styles.leftColumnBox}>
                                         <Text style={styles.timeSlotStyle}>
-                                            {slot.format("h:mm:A")} 
+                                            {slot.format("h:mm:A")}  {/** format time slot*/}
                                         </Text>
                                     </View>
                                     <View style={styles.rightColumnBox}>
@@ -197,13 +197,13 @@ function TaskCalanderPage({ route, navigation})
                                                     >
                                                     <Text style={styles.taskTitle}>{task.taskTitle}</Text>
                                                     <Text style={styles.taskTime}>
-                                                        {moment(task.startTime, "HH:mm:ss").format('h:mm A')} -  
-                                                        {moment(task.endTime, "HH:mm:ss").format("h:mm A")}
+                                                        {moment(task.startTime, "HH:mm:ss").format('h:mm A')} - {/** format start of the time*/}
+                                                        {moment(task.endTime, "HH:mm:ss").format("h:mm A")}    {/** format end of the time*/}
                                                     </Text>
                                                 </TouchableOpacity>
                                             ))  
                                         ) : (
-                                            <TouchableOpacity style={styles.taskContainerEmpty}>
+                                            <TouchableOpacity style={styles.taskContainerEmpty}> {/**if task is empty today */}
                                                 <Text style={styles.noTaskText}>NO TASK</Text>
                                             </TouchableOpacity>
                                         )}
