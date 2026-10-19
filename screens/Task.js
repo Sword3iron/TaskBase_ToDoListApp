@@ -388,7 +388,6 @@ function TaskList({ route, navigation })
                                                     source={getProgressImage(task.taskProgress)} //get image of task progress
                                                     style={styles.progressImage}//display image of task progress
                                                 />
-                                
                                             </View>
                                         </View>
                                     </LinearGradient>
@@ -399,6 +398,13 @@ function TaskList({ route, navigation })
                     </ScrollView>
                 </View>
 
+                {/**ADD TASK  */}
+                <TouchableOpacity style={styles.floatingButton} onPress={handleAddTask}>
+                    <View style={styles.plusButton}>
+                        <FontAwesome name='plus' size={30} color="#8f8f8f"/>
+                    </View>
+                </TouchableOpacity>
+                
             </View>
         </View>
     )
