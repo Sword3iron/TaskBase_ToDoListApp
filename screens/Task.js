@@ -573,4 +573,74 @@ const styles = StyleSheet.create({
         fontFamily: 'boldInter',
     },
 
+    //TIMESLOTS
+    taskSlotContainer:{
+        flexGrow: 1,
+        paddingHorizontal: 30,
+        paddingTop: 20,
+    },
+
+    timeSlot:{
+        flexDirection: "row",
+        alignItems: 'center',
+        marginBottom: 5,
+        paddingVertical: 6,
+        borderBottomWidth: 1,
+        borderColor: '#cccccc',
+    },
+
+    timeSlotStyle:{
+        fontSize: 13,
+        fontWeight: 'Bold',
+        marginBottom: 5,
+        textAlignVertical: 'center',
+    },
+
+    rightColumnBox:{
+        flex:1,
+        paddingLeft: 0,
+    },
+
+    leftColumnBox:{
+        width: 70,
+        paddingRight: 10,
+        alignItems: 'flex-end',
+        justifyContent: 'center', 
+    },
+
+    taskContainer:{
+        backgroundColor: "#ffffaa",
+        padding: 15,
+        borderRadius: 10,
+        paddingHorizontal: 18,
+        marginBottom: 5,
+    },
+
+    taskTitle:{
+        fontFamily: "boldNanum",
+        fontSize: 16,
+        marginBottom: 5,
+    },
+
+    taskTime:{
+        fontFamily: "regularNanum",
+        fontSize: 12,
+        color: '#555',
+    },
+
+    taskContainerEmpty:{
+        padding: 8,
+        paddingHorizontal: 18,
+        marginBottom: 10,
+    },
+
+    noTaskText:{
+        fontSize: 12,
+        color: '#aaa'
+    },
+
+    taskSlotWarpper:{
+        height: 550,
+        paddingBottom: 30,
+    },
 })
