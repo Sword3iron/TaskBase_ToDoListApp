@@ -251,6 +251,71 @@ function CalendarPage({route, navigation})
                     </View>
                 </View>
 
+                {/**TASK ANALYSIS */}
+                <ScrollView 
+                    contentContainerStyle={[styles.percentagePaddingContainer,{backgroundColor: colors.background2}]}
+                    refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+                > 
+                    <View style={styles.percentageContainer}>
+                        <View style={styles.analysisHeader}>
+                            <Text style={styles.analysisText}>Task Analysis </Text>
+                            <Text style={styles.taskSummary}>
+                                {taskAnalysisStats.completedCount} / {taskAnalysisStats.total} Tasks
+                            </Text>
+                        </View>
+
+                        {/**PERCENTAGES ROWS */}
+                        <View style={styles.percantageRow}>
+                            {/**COMPLETED */}
+                            <View style={styles.percantageBox}>
+                                <Image source = {require('../assets/images/completed.png')} 
+                                        style = {styles.smallImage}
+                                />
+                                <View style={styles.columnBox}>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.completed} %</Text>
+                                    <Text style={styles.labelText}>Completed</Text>
+                                </View>
+                            </View>
+                            
+                            {/**INCOMPLETED */}
+                            <View style={styles.percantageBox}>
+                                <Image source = {require('../assets/images/incompleted.png')} 
+                                            style = {styles.smallImage}
+                                />
+                                <View style={styles.columnBox}>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.incompleted} %</Text>
+                                    <Text style={styles.labelText}>Incompleted</Text>
+                                </View>
+                            </View> 
+                        </View>
+
+                        {/**PERCENTAGES ROWS */}
+                        <View style={styles.percantageRow}>
+                            {/**IN PROGRESS */}
+                            <View style={styles.percantageBox}>
+                                <Image source = {require('../assets/images/inProgress.png')} 
+                                        style = {styles.smallImage}
+                                />
+                                <View style={styles.columnBox}>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.inProgress} %</Text>
+                                    <Text style={styles.labelText}>In Progress</Text>
+                                </View>
+                            </View>
+                            {/**CANCELLED */}
+                            <View style={styles.percantageBox}>
+                                <Image source = {require('../assets/images/cancelled.png')} 
+                                        style = {styles.smallImage}
+                                />
+                                <View style={styles.columnBox}>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.cancelled} %</Text>
+                                    <Text style={styles.labelText}>Cancelled</Text>
+                                </View>
+                            </View> 
+                        </View>
+                    </View>
+                </ScrollView>
+
+
             </View>
         </View>
     );
