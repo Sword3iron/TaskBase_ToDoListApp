@@ -322,6 +322,14 @@ function TaskList({ route, navigation })
                 return require('../assets/images/cancelled.png');  //cancelled
         }
     }
+
+    return(
+        <View style={[styles.container,{backgroundColor:colors.background2}]}>
+            <View style={[styles.addTaskTitle,{color:colors.text}]}>
+                Task For Today
+            </View>
+        </View>
+    )
 }
 
 
