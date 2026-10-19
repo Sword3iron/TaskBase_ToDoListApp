@@ -237,6 +237,19 @@ function CalendarPage({route, navigation})
                         </View>
                     </TouchableOpacity>
                 </View>
+
+                {/**CALENDAR */}
+                <View style={styles.calendarWrapper}>
+                    <View style={styles.calendarContainer}>
+                        <Calendar
+                            markingType={'multi-dot'} 
+                            markedDates={markedDates}
+                            onDayPress={day => fetchTasks(day.dateString)}
+                            onMonthChange={onMonthChange} 
+                            style={styles.calendar}
+                        />
+                    </View>
+                </View>
                 
             </View>
         </View>
