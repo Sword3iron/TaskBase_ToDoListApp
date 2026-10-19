@@ -242,15 +242,15 @@ function CalendarPage({route, navigation})
                 <View style={styles.calendarWrapper}>
                     <View style={styles.calendarContainer}>
                         <Calendar
-                            markingType={'multi-dot'} 
-                            markedDates={markedDates}
-                            onDayPress={day => fetchTasks(day.dateString)}
-                            onMonthChange={onMonthChange} 
-                            style={styles.calendar}
+                            markingType={'multi-dot'} //allow mulitple dots to mark different event on a day
+                            markedDates={markedDates} //supplies the dates and markers to display
+                            onDayPress={day => fetchTasks(day.dateString)} // fetches tasks for the selected date
+                            onMonthChange={onMonthChange} //updates data when the displayed month changes
+                            style={styles.calendar} //applies the calander's custom styling
                         />
                     </View>
                 </View>
-                
+
             </View>
         </View>
     );
