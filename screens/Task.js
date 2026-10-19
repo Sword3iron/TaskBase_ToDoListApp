@@ -258,6 +258,15 @@ function TaskList({ route, navigation })
         mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
         boldInter: require('../assets/font/static/Inter_18pt-Bold.ttf'), // bold inter font
     });
+
+    const [refreshing, setRefreshing] = useState(false); //state to refresh
+    const onRefresh = async () =>{
+        setRefreshing(true); //show refresh indicator
+        setTimeout(() => {
+            setRefreshing(false); //disabled refresh indicator
+        }, 1000);  //refresh for 1 seconds
+    };
+
 }
 
 
