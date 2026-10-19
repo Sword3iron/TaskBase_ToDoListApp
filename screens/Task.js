@@ -404,16 +404,26 @@ function TaskList({ route, navigation })
                         <FontAwesome name='plus' size={30} color="#8f8f8f"/>
                     </View>
                 </TouchableOpacity>
-                
+
             </View>
         </View>
-    )
+    );
 }
 
-
+/***************************************************************/
+///*****************TASK PAGE STACKS PAGE*********************///
+/***************************************************************/
 function TaskPage({ route })
 {
+    const {userId, username, profilePic} = route.params; //pass parameters for both profile page and tasks
 
+    //**STACK PAGES FOR TASK */
+    return(
+        <Stack.Navigator screenOptions={{ headerShown:false }}>
+            <Stack.Screen name="TaskCalanderPage" component={TaskCalanderPage} initialParams={{userId, username, profilePic}}/> 
+            <Stack.Screen name="TaskList" component={TaskList} initialParams={{userId, username, profilePic}}/>
+        </Stack.Navigator>
+    )
 }
 
 export default TaskPage;
