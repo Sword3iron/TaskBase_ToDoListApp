@@ -324,9 +324,35 @@ function TaskList({ route, navigation })
     }
 
     return(
-        <View style={[styles.container,{backgroundColor:colors.background2}]}>
-            <View style={[styles.addTaskTitle,{color:colors.text}]}>
-                Task For Today
+        <View style={[style.container,{backgroundColor:colors.background2}]}>
+            <View style={styles.screenContainer}>
+
+                {/*HEADER */}
+                <View style={[styles.headerRow,{backgroundColor:colors.background2}]}>
+                    <View style={[styles.addTaskTitle,{color:colors.text}]}>
+                        Task For Today
+                    </View>
+
+                    {/**PROFILE IMAGE */}
+                    <TouchableOpacity
+                        onPress={handleProfilePage}
+                    >
+                        <View style={styles.profileImageContainer}>
+                            {profilePic ? (
+                                <Image
+                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                style={styles.profileImage}
+                                />
+                            ) : (
+                                <View style={styles.avatarCircle}>
+                                    <Text style={styles.avatarText}>{firstAvatar}</Text>
+                                </View>
+                            )}
+                        </View>
+                    </TouchableOpacity>
+                </View>
+
+                
             </View>
         </View>
     )
