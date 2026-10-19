@@ -355,20 +355,20 @@ function TaskList({ route, navigation })
                 {/**TASK LIST */}
                 <View style = {styles.todayTaskWrapper}>
                     <ScrollView
-                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>} //refresh the page
                     >
                         <View style={[styles.todayTaskContainer,{backgroundColor:colors.background2}]}>
-                            {tasks.length === 0 ? (
+                            {tasks.length === 0 ? ( //if no task today, display message for no tasks
                                 <View style={styles.todayTaskEmptyTaskBox}>
-                                    <Text style={[styles.todayTaskEmptyTaskText,{color:colors.text}]}>
+                                    <Text style={[styles.todayTaskEmptyTaskText,{color:colors.text}]}> 
                                         No Task Today.
                                     </Text> 
                                 </View>
                             ) : ( 
                                 tasks.map((task, index) => (
                                 <TouchableOpacity  
-                                    key={index}
-                                    onPress={() =>handleEditTask(task)}
+                                    key={index} //identify the index of task under key
+                                    onPress={() =>handleEditTask(task)} //navigate to edit task page when click
                                     >
 
                                     <LinearGradient 
@@ -383,10 +383,10 @@ function TaskList({ route, navigation })
                                             <Text style={styles.todayTaskTime}>
                                                 {task.startTime} - {task.endTime}
                                             </Text>
-                                            <View style={styles.todayTaskProgressBox}>
+                                            <View style={styles.todayTaskProgressBox}> 
                                                 <Image
-                                                    source={getProgressImage(task.taskProgress)}
-                                                    style={styles.progressImage}
+                                                    source={getProgressImage(task.taskProgress)} //get image of task progress
+                                                    style={styles.progressImage}//display image of task progress
                                                 />
                                 
                                             </View>
