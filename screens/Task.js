@@ -518,4 +518,59 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
 
+    //CALANDER
+    //FLATLIST FOR CALANDER
+    sqaureCalanderDateContainer:{
+        width: '100%',
+        background: '#ffffff',
+        marginTop: 5,
+    },
+
+    flatListCalender:{
+        flexGrow: 1,
+        justifyContent: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 5,
+    },
+
+    squareDateItem:{
+        padding: 10,
+        marginHorizontal: 8,
+        borderRadius: 8,
+        width: width / 6 - 13,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#ffffff',
+        borderColor: '#000000',
+        borderWidth: 0.5,
+    },
+
+    squareCurrentDateItem:{
+        backgroundColor: '#F3FF4F',
+        fontFamily: 'lightInter',
+    },
+
+    squareDayText:{
+        fontSize: 18,
+        fontWight: 'boldInter',
+        color: '#000000',
+        marginBottom: "10",
+    },
+
+    sqaureCurrentDayText:{
+        color: '#528045',
+        fontFamily: 'boldInter',
+    },
+
+    sqaureWeekdayText:{
+        fontSize: 12,
+        color: "#666666",
+        fontFamily: 'lightInter',
+    },
+
+    squareCurrentWeekdayText:{
+        color: '#528045',
+        fontFamily: 'boldInter',
+    },
+
 })
