@@ -308,6 +308,20 @@ function TaskList({ route, navigation })
             Alert.alert('Error', 'Something Went Wrong');
         });
     }
+
+    //function to determinate the image based on task progress
+    const getProgressImage = (taskProgress) => {
+        switch(taskProgress){
+            case 'completed':
+                return require('../assets/images/completed.png'); //completed
+            case 'incompleted':
+                return require('../assets/images/incompleted.png'); //incompleted
+            case 'inProgress':
+                return require('../assets/images/inProgress.png'); //in progress
+            case 'cancelled':
+                return require('../assets/images/cancelled.png');  //cancelled
+        }
+    }
 }
 
 
