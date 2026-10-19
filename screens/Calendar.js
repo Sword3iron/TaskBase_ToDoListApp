@@ -315,7 +315,12 @@ function CalendarPage({route, navigation})
                     </View>
                 </ScrollView>
 
-
+                {/** ADD TASKS BUTTON */}
+                <TouchableOpacity style={styles.floatingButton} onPress={handleAddTask}>
+                    <View style={styles.plusButton}>
+                        <FontAwesome name='plus' size={30} color="#8f8f8f"/>
+                    </View>
+                </TouchableOpacity>  
             </View>
         </View>
     );
