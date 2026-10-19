@@ -352,7 +352,53 @@ function TaskList({ route, navigation })
                     </TouchableOpacity>
                 </View>
 
-                
+                {/**TASK LIST */}
+                <View style = {styles.todayTaskWrapper}>
+                    <ScrollView
+                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+                    >
+                        <View style={[styles.todayTaskContainer,{backgroundColor:colors.background2}]}>
+                            {tasks.length === 0 ? (
+                                <View style={styles.todayTaskEmptyTaskBox}>
+                                    <Text style={[styles.todayTaskEmptyTaskText,{color:colors.text}]}>
+                                        No Task Today.
+                                    </Text> 
+                                </View>
+                            ) : ( 
+                                tasks.map((task, index) => (
+                                <TouchableOpacity  
+                                    key={index}
+                                    onPress={() =>handleEditTask(task)}
+                                    >
+
+                                    <LinearGradient 
+                                        style={styles.todayTaskCard}
+                                        colors={['#38ff4d', '#ffffff']}
+                                        start={{x:0, y:0.2}}
+                                        end={{x:0.5, y:1}}
+                                        >
+                                        <Text style={styles.todayTaskTitle}>{task.taskTitle}</Text>
+                                        <Text style={styles.todayTaskCategory}>{task.taskCategory}</Text>
+                                        <View style={styles.todayTaskFooter}>
+                                            <Text style={styles.todayTaskTime}>
+                                                {task.startTime} - {task.endTime}
+                                            </Text>
+                                            <View style={styles.todayTaskProgressBox}>
+                                                <Image
+                                                    source={getProgressImage(task.taskProgress)}
+                                                    style={styles.progressImage}
+                                                />
+                                
+                                            </View>
+                                        </View>
+                                    </LinearGradient>
+                                </TouchableOpacity>
+                                ))
+                            )} 
+                        </View>            
+                    </ScrollView>
+                </View>
+
             </View>
         </View>
     )
