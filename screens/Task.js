@@ -643,4 +643,87 @@ const styles = StyleSheet.create({
         height: 550,
         paddingBottom: 30,
     },
+
+    //**TODAY TASK */
+    /**HANDLE EACH STYLING ON CONTAINER OF THE TASKS PROGRESS*/
+    todayTaskWrapper:{
+        height: 550,
+        paddingBottom: 30,
+    },
+
+    todayTaskContainer:{
+        paddingHorizontal: 35,
+        fontFamily: 'mediumInter',
+    },
+
+    todayTaskCard:{
+        backgroundColor: '#f9ffa7',
+        paddingVertical: 20,
+        paddingHorizontal: 20,
+        marginVertical: 6,
+        borderRadius:10,
+        elevation: 5, 
+    },
+
+    todayTaskTitle:{
+        fontFamily: "boldNanum",
+        fontSize: 16,
+        marginBottom: 14,
+    },
+
+    todayTaskCategory:{
+        fontFamily: 'regularNanum',
+        color: '#000000',
+        bottom: 10,
+    },
+
+    todayTaskTime: {
+        fontFamily: "lightInter",
+        color: '#333333',
+        flex: 1,
+    },
+
+    todayTaskEmptyTaskBox:{
+        padding:20,
+        backgroundColor: '#fffcda',
+        borderRadius: 10,
+        marginTop: 0,
+        alignItems: 'center',
+    },
+
+    todayTaskEmptyTaskText:{
+        fontSize: 16,
+        color: '#888888'
+    },
+
+    todayTaskWrapper:{
+        height: 640,
+        paddingBottom: 30,
+    },
+
+    todayTaskFooter:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 6,
+    }, 
+
+    todayTaskProgressBox:{
+        paddingVertical: 4, 
+        paddingHorizontal: 10,
+        borderRadius: 20,
+    },
+
+    todayTaskProgressText:{
+        fontWeight: 700,
+        color: '#ffffff'
+    },
+
+    progressImage:{
+        width: 40,
+        height: 40,
+        bottom:30,
+        marginRight: 6,
+        resizeMode: 'contain',
+    },
 })
