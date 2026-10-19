@@ -267,6 +267,18 @@ function TaskList({ route, navigation })
         }, 1000);  //refresh for 1 seconds
     };
 
+    //set declaration use state for information extraction
+    const [selectedDate, setSelectedDate] = useState(new Date()); //set selected date
+    const [tasks, setTasks] = useState([]); //set tasks
+    const formattedDateDBTask = (date) => { //format date 
+        return date.toISOString().split('T')[0]; //convert to ISO string and split
+    };
+
+    //use effect hook to fetch tasks whenever selectedDate changes
+    useEffect(() => {
+        fetchTaskData(selectedDate); //fetch task data
+    }, [selectedDate]); //display array of selected date
+
 }
 
 
