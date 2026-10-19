@@ -213,7 +213,9 @@ function CalendarPage({route, navigation})
 
     return(
         <View style={styles.container}>
-
+            <View style={[styles.screenContainer, {backgroundColor:colors.background2}]}>
+                
+            </View>
         </View>
     );
 }
