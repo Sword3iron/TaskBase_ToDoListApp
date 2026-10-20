@@ -17,3 +17,7 @@ function ProfilePage({ route })
 }
 
 export default ProfilePage;
+
+const styles = StyleSheet.create({
+    
+})
