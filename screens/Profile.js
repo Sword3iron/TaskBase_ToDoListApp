@@ -80,6 +80,20 @@ function ProfileMain({ route, navigation})
             <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
                 <Text style={styles.logoutText}>Log Out</Text>
             </TouchableOpacity>
+
+            {/*DIVIDE */}
+            <View style={styles.dividerLine}/>
+
+            {settingMenu.map((item, index) => (
+                <TouchableOpacity
+                    key={index} //set key for each item
+                    style={styles.optionSettingButton} //styling for setting button
+                    onPress={() => navigation.navigate(item.screen,{username, profilePic})} //navigate to the screen with username parameters' data
+                >
+                    <Text style = {styles.optionSettingText}>{item.title}</Text>
+                    <Feather name = {item.icon} size={20} color="#000000" />
+                </TouchableOpacity>
+            ))}
         </View>
     )
 }
