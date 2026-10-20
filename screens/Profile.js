@@ -58,6 +58,24 @@ function ProfileMain({ route, navigation})
 
     return(
         <View style={[styles.screenContainer, {backgroundColor: colors.background3}]}>
+
+            {/**PROFILE PICTURE */}
+            <View style={styles.profilePicContainer}>
+                <View style={styles.profilePicCircle}>
+                {profilePic ? (
+                    <Image
+                    source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                    style={styles.profileImage}
+                    />
+                ) : (
+                    <View style={styles.avatarCircle}>
+                        <Text style={styles.avatarText}>{firstAvatar}</Text>
+                    </View>
+                )}
+                </View>
+                <Text style={[styles.usernameText,{color: colors.text}]}> {username} </Text>
+            </View>
+
             
         </View>
     )
