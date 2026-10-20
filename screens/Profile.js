@@ -7,6 +7,7 @@ import { useFonts } from 'expo-font';
 import * as ImagePicker from 'expo-image-picker';
 import { ThemeContext } from '../themeColor/ThemeContext';
 
+const Stack = createStackNavigator(); //set navigation 
 
 /***************************************************************/
 ////*******************PROFILE PAGE STACK*********************///
@@ -19,5 +20,5 @@ function ProfilePage({ route })
 export default ProfilePage;
 
 const styles = StyleSheet.create({
-    
+
 })
