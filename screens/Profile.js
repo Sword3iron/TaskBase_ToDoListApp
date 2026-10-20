@@ -108,6 +108,18 @@ function AccountSettingsPage({ route, navigation})
     const [password, setPassword] = useState('');//set usestate on password
     const [profilePic, setProfilePic] = useState('');//set usestate on profile picture
 
+    //Debug the parameter passing for database
+    useEffect(()=>{
+        if (route.params?.username){  
+            //debugging username data received
+            console.log("received Username: ", route.params.username);
+            //set username paramater
+            setCurrentUsername(route.params.username);
+        } else {
+            //display log for error
+            console.log("received no username passed in route.params: ");
+        }
+    }, [route.params]); //memorize the parameters
 }
 
 
