@@ -56,6 +56,11 @@ function ProfileMain({ route, navigation})
         }
     };
 
+    return(
+        <View style={[styles.screenContainer, {backgroundColor: colors.background3}]}>
+            
+        </View>
+    )
 }
 
 /***************************************************************/
