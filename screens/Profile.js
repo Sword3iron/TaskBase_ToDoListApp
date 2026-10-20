@@ -28,6 +28,15 @@ function ProfileMain({ route, navigation})
 
     //color theme when turning on the dark mode
     const {colors} = useContext(ThemeContext);
+
+    //Menu pages
+    const settingMenu = [
+        {title: 'ACCOUNT SETTINGS', icon: 'edit-3', screen: 'AccountSettings'}, //acount settings
+        {title: 'PERSONALIZATION', icon: 'settings', screen: 'Personalization'}, //personalization
+        {title: 'NOTIFICATIONS', icon: 'bell', screen: 'Notification'}, //notification
+        {title: 'DATA & PRIVACY', icon: 'shield', screen: 'DataPrivacy'}, //data privacy
+        {title: 'APP VERSION', icon: 'file-text', screen: 'AppVersion'}, //App version
+    ];
 }
 
 /***************************************************************/
