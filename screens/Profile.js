@@ -97,6 +97,13 @@ function ProfileMain({ route, navigation})
     )
 }
 
+
+function AccountSettingsPage({ route, navigation})
+{
+    
+}
+
+
 /***************************************************************/
 ////*******************PROFILE PAGE STACK*********************///
 /***************************************************************/
