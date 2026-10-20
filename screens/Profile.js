@@ -83,7 +83,6 @@ function ProfileMain({ route, navigation})
 
             {/*DIVIDE */}
             <View style={styles.dividerLine}/>
-
             {settingMenu.map((item, index) => (
                 <TouchableOpacity
                     key={index} //set key for each item
