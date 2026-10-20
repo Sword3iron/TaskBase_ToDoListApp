@@ -37,6 +37,25 @@ function ProfileMain({ route, navigation})
         {title: 'DATA & PRIVACY', icon: 'shield', screen: 'DataPrivacy'}, //data privacy
         {title: 'APP VERSION', icon: 'file-text', screen: 'AppVersion'}, //App version
     ];
+
+    // function to handle logout function
+    const handleLogout = async () => {
+        try {
+            //fetch task data from API mySQL
+            const res = await fetch('http://192.168.1.115/taskbaseapp/logout.php',{
+                method: 'GET', //use GET method
+            });
+            const data = await res.json();
+            if (data.success){
+                //if server success, navigate to login
+                navigation.replace('Login');
+            }
+        }catch(error){
+            //handle network or other errors
+            console.error('Logout failed: ', error);
+        }
+    };
+
 }
 
 /***************************************************************/
