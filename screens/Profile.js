@@ -6,3 +6,4 @@ import {Feather} from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import * as ImagePicker from 'expo-image-picker';
 import { ThemeContext } from '../themeColor/ThemeContext';
+
