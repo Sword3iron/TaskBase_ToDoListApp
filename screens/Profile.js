@@ -15,3 +15,5 @@ function ProfilePage({ route })
 {
     
 }
+
+export default ProfilePage;
