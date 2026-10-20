@@ -100,7 +100,14 @@ function ProfileMain({ route, navigation})
 
 function AccountSettingsPage({ route, navigation})
 {
-    
+    //set constant variable for colors and usestate for username, password, profile picture
+    const {colors} = useContext(ThemeContext); //change the colors
+    const [currentUsername, setCurrentUsername] = useState(''); //set usestate on current username
+    const [username, setUsername] = useState(''); //set usestate on username
+    const [confirmPassword, setConfirmPassword] = useState('');//set usestate on password confirmation
+    const [password, setPassword] = useState('');//set usestate on password
+    const [profilePic, setProfilePic] = useState('');//set usestate on profile picture
+
 }
 
 
