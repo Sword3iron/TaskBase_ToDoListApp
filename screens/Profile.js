@@ -76,7 +76,10 @@ function ProfileMain({ route, navigation})
                 <Text style={[styles.usernameText,{color: colors.text}]}> {username} </Text>
             </View>
 
-            
+            {/**LOG OUT BUTTON */}
+            <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+                <Text style={styles.logoutText}>Log Out</Text>
+            </TouchableOpacity>
         </View>
     )
 }
