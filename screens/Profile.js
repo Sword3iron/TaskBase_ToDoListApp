@@ -120,6 +120,34 @@ function AccountSettingsPage({ route, navigation})
             console.log("received no username passed in route.params: ");
         }
     }, [route.params]); //memorize the parameters
+    
+
+    //function for changing profile picture
+    const handleProfilePic = async () => {
+        // use image picker sensor 
+        const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (!permissionResult.granted){
+            //if permission is not granted, receive alert message
+            Alert.alert("Permission Denied", "Please enable permission access to your image library.")
+        }
+
+        //launch the device image library to select image
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaType: ImagePicker.MediaTypeOptions.Images, //restrict selection to image  
+            base64: true, //include base64 data
+            quality: 0.5, //image quality reduce to 50%
+        });
+
+        //check if the users did not cancel the image picker and if assets are returned
+        if(! result.canceled && result.assets && result.assets.length > 0){
+            const asset = result.assets[0]; //access the first selected asset
+            setProfilePic({//set profile picture
+                base64: asset.base64, //use base64 data string 
+                uri: asset.uri, //load uri image
+            });
+        }
+    };
+
 }
 
 
