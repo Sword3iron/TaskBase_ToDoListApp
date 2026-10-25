@@ -242,7 +242,30 @@ function AccountSettingsPage({ route, navigation})
                         onChangeText={setConfirmPassword}                      
                     />
 
+                    {/**PROFILE PICTURE */}
+                    <Text style = {styles.settingTypeTitle}>
+                        Profile Pic / Avatar
+                    </Text>
+                    <TouchableOpacity
+                        style={styles.uploadPicButton}
+                        onPress={handleProfilePic}
+                    >
+                        <Text style={styles.uploadPicText}> 
+                        Choose Profile Picture 
+                        </Text>
+                    </TouchableOpacity>
 
+                    {profilePic && <Image source={{ uri: profilePic.uri }} style={styles.profileImage}/>}
+
+                    {/**BUTTON */}
+                    <TouchableOpacity 
+                        style={styles.updateButton}
+                        onPress={handleUpdate}
+                        >
+                        <Text style={styles.updateButtonText}>
+                            Update Profile 
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
