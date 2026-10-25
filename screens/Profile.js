@@ -424,6 +424,17 @@ function AppVersionPage({ route, navigation })
 
     //color theme when turning on the dark mode    
     const {colors} = useContext(ThemeContext);
+
+    return(
+        <View style = {[styles.settingScreen,{backgroundColor: colors.background3}]}>
+            <Text style={[styles.settingTitle, {color: colors.text}]}>App Version</Text>
+            <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
+                <View style = {styles.settingContainerSub}>
+
+                </View>
+            </View>
+        </View>
+    );
 }
 
 
