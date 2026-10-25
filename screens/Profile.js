@@ -150,7 +150,17 @@ function AccountSettingsPage({ route, navigation})
 
     //function for handle profile update
     const handleUpdate = () => {
+        if(!username || !password || !confirmPassword){ //username, password and confirm passowrd not inserted
+            //alert message display
+            Alert.alert("Data Incomplete. Please fill all fileds.");
+            return;
+        }
 
+        if(password !== confirmPassword){ //password and confirm passowrd not match
+            //alert message display
+            Alert.alert("The Password Does Not Match.");
+            return;
+        }
     }
 
 }
