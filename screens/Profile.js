@@ -120,7 +120,7 @@ function AccountSettingsPage({ route, navigation})
             console.log("received no username passed in route.params: ");
         }
     }, [route.params]); //memorize the parameters
-    
+
 
     //function for changing profile picture
     const handleProfilePic = async () => {
@@ -147,6 +147,11 @@ function AccountSettingsPage({ route, navigation})
             });
         }
     };
+
+    //function for handle profile update
+    const handleUpdate = () => {
+
+    }
 
 }
 
