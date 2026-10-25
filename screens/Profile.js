@@ -369,7 +369,39 @@ function DataPrivacyPage({ route, navigation})
                             Privacy Policy
                         </Text>
 
-                        
+                        {/** TEXT POLICY */}
+                        <Text style = {styles.privacyTextContent}>
+                            This application does not collects, uses and disclouse any information
+                            that associated with our users, it has no way in sharing personal data with 
+                            third-party user and that it does not condone or tolerate any misuse, abuse
+                            unauthorized disclouse of user information.
+                            {"\n"}{"\n"}
+
+                            This application is for project testing uses only, and it was never 
+                            meant to be engaging cookies and tracking policies that may affect 
+                            to personal data of user in any way.
+                            {"\n"}{"\n"}
+                        </Text>
+                        <Text style = {styles.privacyTextTitle}>
+                            Personal Data
+                        </Text> 
+
+                         {/** DATE POLICY */}
+                        <Text style = {styles.privacyTextContent}>
+                            Here in TaskBase, we are committed to protecting user's privacy.
+                            {"\n"}
+                        </Text>
+                        <View style={{ paddingHorizontal: 10, marginVertical: 12}}>
+                            <Text style = {styles.privacyTextContent}>
+                            • We do not share personal information without user's consent. {"\n"}{"\n"}
+                            • User's data is stored and secured. {"\n"}{"\n"}
+                            • We use encryption to safeguard user's data information. {"\n"}{"\n"}
+                            • We regulary review our privacy practices and enthic codes. {"\n"}{"\n"}
+                            • Ensuring user's safety and transperancy over the usage of data overboard. {"\n"}{"\n"}
+                            • We comply with relevant privacy laws and regulations. {"\n"}{"\n"}
+                            • The team is committed to countinues improve and enhancement for user's experience to ensure equality. {"\n"}{"\n"}
+                            </Text>
+                        </View>
                     </View>
                 </View>
             </ScrollView>
