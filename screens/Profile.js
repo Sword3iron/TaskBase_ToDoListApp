@@ -197,6 +197,17 @@ function AccountSettingsPage({ route, navigation})
         })
     }
 
+    return(
+        <View style = {[styles.settingScreen, {backgroundColor: colors.background3}]}>
+            <Text style = {[styles.settingTitle, {color: colors.text}]}>Account Settings</Text>
+            <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
+                <View style={styles.settingContainerSub}>
+                    
+                </View>
+            </View>
+        </View>
+    )
+
 }
 
 
