@@ -205,6 +205,44 @@ function AccountSettingsPage({ route, navigation})
                     <Text style = {styles.settingTitleSubInfo}>
                         Here you can change your information account.
                     </Text>
+
+                    {/**TEXT FIELD  */}
+                    {/**USERNAME */}
+                    <Text style = {styles.settingTypeTitle}>
+                        Username
+                    </Text>
+                    <TextInput 
+                        placeholder='New Username'
+                        style = {styles.input}
+                        value = {username}
+                        onChangeText={setUsername}
+                    />
+
+                    {/**PASSWORD */}
+                    <Text style = {styles.settingTypeTitle}>
+                        Password
+                    </Text>
+                    <TextInput 
+                        placeholder='New Password'
+                        secureTextEntry
+                        style = {styles.input}
+                        value = {password}
+                        onChangeText={setPassword}
+                    />
+
+                    {/**CONFIRM PASSWORD */}
+                    <Text style = {styles.settingTypeTitle}>
+                        Retype Password for confirmation
+                    </Text>
+                    <TextInput 
+                        placeholder='Confirm Password'
+                        secureTextEntry
+                        style = {styles.input}
+                        value = {confirmPassword}
+                        onChangeText={setConfirmPassword}                      
+                    />
+
+
                 </View>
             </View>
         </View>
