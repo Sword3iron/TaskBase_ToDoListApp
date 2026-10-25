@@ -161,6 +161,14 @@ function AccountSettingsPage({ route, navigation})
             Alert.alert("The Password Does Not Match.");
             return;
         }
+
+        //object update data in extracting information for extraction and update
+        const updateData = {
+            currentUsername: currentUsername, //current username
+            username: username, //username
+            password: password, //password
+            profilePic: profilePic?.base64 || null //profile pciture
+        };
     }
 
 }
