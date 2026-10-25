@@ -326,6 +326,29 @@ function NotificationPage({ route, navigation })
             console.log("Notifications Disabled")
         }
     }
+
+    return(
+        <View style = {[styles.settingScreen,{backgroundColor: colors.background3}]}>
+            <Text style={[styles.settingTitle, {color: colors.text}]}>Notification</Text>
+            <View style = {[styles.settingContainer,{backgroundColor: colors.background3}]}>
+                <View style = {styles.settingContainerSub}>
+                    <View style={styles.personalizationContainer}>
+                        <Text>
+                            Enable Notifications
+                        </Text>
+
+                        {/**CHANGE APPEARANCE */}
+                        <Switch
+                            trackColor={{false: "#767577", true: "#81b0ff" }} //change color from yellow to black
+                            thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"} //change switch button color from yellow to black
+                            onValueChange={toggleSwitch} //engagin function toggle switch
+                            value={isEnabled} //engaging value enable
+                        />
+                    </View>
+                </View>
+            </View>
+        </View>
+    );
 }
 
 
