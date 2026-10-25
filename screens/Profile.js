@@ -278,7 +278,31 @@ function AccountSettingsPage({ route, navigation})
 /***************************************************************/
 function PersonalizationPage({ route, navigation })
 {
-    
+    //color theme when turning on the dark mode
+    const { isDarkMode, toggleTheme, colors } = useContext(ThemeContext);
+    return(
+        <View style = {[styles.settingScreen, {backgroundColor: colors.background3}]}>
+            <Text style={[styles.settingTitle, {color: colors.text}]}>Personalization</Text>
+            <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
+                <View style = {styles.settingContainerSub}>
+
+                    {/**CHANGE APPEARANCE */}
+                    <View style = {styles.personalizationContainer}>
+                        <Text>
+                            Dark Mode
+                        </Text>
+                        <Switch
+                            value={isDarkMode} //engaging function of dark mode turning
+                            onValueChange={toggleTheme} //based on the toggle theme
+                            trackColor={{ false:'#ccc', true: '#81b0ff'}} //change color to yellow to black
+                            thumbColor={isDarkMode ? '#f5dd4b' : '#f4f3f4'} //change switch button color to yellow to black
+                        />
+                    </View>
+                </View>
+            </View>
+        </View>
+    );
+
 }
 
 
