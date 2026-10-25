@@ -456,6 +456,18 @@ function AppVersionPage({ route, navigation })
 function ProfilePage({ route })
 {
     const {username, profilePic} = route.params; //pass parameters for both profile page and username
+
+    //**STACK PAGES FOR PROFILE */
+    return(
+        <Stack.Navigator screenOptions={{ headerShown:false }}>
+            <Stack.Screen name="ProfileMain" component={ProfileMain} initialParams={{username, profilePic}} options={{ title: 'profile'}}/>
+            <Stack.Screen name="AccountSettings" component={AccountSettingsPage} initialParams={{username, profilePic}}/>
+            <Stack.Screen name="Personalization" component={PersonalizationPage}/>
+            <Stack.Screen name="Notification" component={NotificationPage}/>
+            <Stack.Screen name="DataPrivacy" component={DataPrivacyPage}/>
+            <Stack.Screen name="AppVersion" component={AppVersionPage}/>
+        </Stack.Navigator>
+    )
 }
 
 export default ProfilePage;
