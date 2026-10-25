@@ -202,7 +202,9 @@ function AccountSettingsPage({ route, navigation})
             <Text style = {[styles.settingTitle, {color: colors.text}]}>Account Settings</Text>
             <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
                 <View style={styles.settingContainerSub}>
-                    
+                    <Text style = {styles.settingTitleSubInfo}>
+                        Here you can change your information account.
+                    </Text>
                 </View>
             </View>
         </View>
