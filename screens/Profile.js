@@ -364,7 +364,13 @@ function DataPrivacyPage({ route, navigation})
             <Text style={[styles.settingTitle, {color: colors.text}]}>Data & Privacy</Text>
             <ScrollView>
                 <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
-                    
+                    <View style = {styles.settingContainerSub}>
+                        <Text style = {styles.privacyTextTitle}>
+                            Privacy Policy
+                        </Text>
+
+                        
+                    </View>
                 </View>
             </ScrollView>
         </View>
