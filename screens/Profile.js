@@ -169,6 +169,32 @@ function AccountSettingsPage({ route, navigation})
             password: password, //password
             profilePic: profilePic?.base64 || null //profile pciture
         };
+
+        //fetch login insertion from API mySQL
+        fetch('http://192.168.1.115/taskbaseapp/update.php', {
+            method: 'POST', //user method post
+            headers: { 'Content-Type' : 'application/json'}, //JSON content
+            body: JSON.stringify(updateData) //convert data to JSON string
+        })
+        .then(res => res.json()) //parse JSON response
+        .then(json => { 
+             //if server success, show alert message
+            if(json.success){
+                //display message
+                Alert.alert('Update Success!', 
+                            'log out and login you account to see the change.',
+                                [
+                                    {
+                                        text: 'OK',
+                                        onPress: () => navigation.goBack() //navigate back to home
+                                    }
+                                ]
+                            );
+            }else{
+                //if failed, show error message
+                Alert.alert("Updated Faliure: " + json.message);
+            }
+        })
     }
 
 }
