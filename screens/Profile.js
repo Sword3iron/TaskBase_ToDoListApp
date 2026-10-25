@@ -430,6 +430,18 @@ function AppVersionPage({ route, navigation })
             <Text style={[styles.settingTitle, {color: colors.text}]}>App Version</Text>
             <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
                 <View style = {styles.settingContainerSub}>
+                    
+                    {/**CELL BLOCK */}
+                    <FlatList
+                        data={appVersionData}
+                        keyExtractor={(item) => item.key}
+                        renderItem={({ item }) =>(
+                            <View style = {styles.row}>
+                                <Text style = {styles.cellKey}>{item.key}</Text>
+                                <Text style = {styles.cellValue}>{item.value}</Text>                       
+                            </View>
+                        )}
+                    /> 
 
                 </View>
             </View>
