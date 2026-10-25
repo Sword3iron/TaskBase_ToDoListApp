@@ -356,7 +356,8 @@ function NotificationPage({ route, navigation })
 /***************************************************************/
 function DataPrivacyPage({ route, navigation})
 {
-
+     //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
 }
 
 
