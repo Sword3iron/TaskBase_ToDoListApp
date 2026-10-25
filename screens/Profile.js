@@ -430,7 +430,7 @@ function AppVersionPage({ route, navigation })
             <Text style={[styles.settingTitle, {color: colors.text}]}>App Version</Text>
             <View style = {[styles.settingContainer, {backgroundColor: colors.background3}]}>
                 <View style = {styles.settingContainerSub}>
-                    
+
                     {/**CELL BLOCK */}
                     <FlatList
                         data={appVersionData}
@@ -455,7 +455,7 @@ function AppVersionPage({ route, navigation })
 /***************************************************************/
 function ProfilePage({ route })
 {
-    
+    const {username, profilePic} = route.params; //pass parameters for both profile page and username
 }
 
 export default ProfilePage;
