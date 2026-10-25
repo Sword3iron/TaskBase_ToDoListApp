@@ -414,7 +414,15 @@ function DataPrivacyPage({ route, navigation})
 /***************************************************************/
 function AppVersionPage({ route, navigation })
 {
-    
+    //data for extraction on app information
+    const appVersionData = [
+        {key: 'Version', value: '1.0.0'},  
+        {key: 'Deveoped In', value: 'React Native'},
+        {key: 'Software', value: 'Android'},
+        {key: 'App Type', value: 'Custom App'},
+    ];
+
+
 }
 
 
