@@ -311,7 +311,21 @@ function PersonalizationPage({ route, navigation })
 /***************************************************************/
 function NotificationPage({ route, navigation })
 {
-    
+    //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext);
+
+    //disable on switch
+    const [isEnabled, setIsEnabled] = useState(false);
+
+    //toggle switch for notification
+    const toggleSwitch = () => {
+        setIsEnabled(prev => !prev);
+        if(!isEnabled){
+            console.log("Notifications Enabled");
+        }else{
+            console.log("Notifications Disabled")
+        }
+    }
 }
 
 
