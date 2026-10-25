@@ -422,7 +422,8 @@ function AppVersionPage({ route, navigation })
         {key: 'App Type', value: 'Custom App'},
     ];
 
-
+    //color theme when turning on the dark mode    
+    const {colors} = useContext(ThemeContext);
 }
 
 
