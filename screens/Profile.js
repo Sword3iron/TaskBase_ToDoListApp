@@ -626,4 +626,35 @@ const styles = StyleSheet.create({
         textAlign: 'justify',
         fontFamily: 'lightInter'
     },
+
+    //ROWS AND COLUMN FOR EVERY SETTING PAGE INSIDE
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 10,
+        borderBottomColor: '#05fe03',
+        borderBottomWidth: 0.5,
+    },
+
+    cellKey:{
+        fontWeight: 'bold',
+        fontSize: 16,
+        paddingRight: 90,
+    },
+
+    cellValue:{
+        fontSize: 16,
+        paddingHorizontal: 5,
+        color: '#b9b9b9'
+    },
+
+    sectionHeader:{
+        fontSize: 18,
+        fontWeight: 'bold',
+        paddingVertical: 10,
+    },
+
+    rightIcon:{
+        marginLeft: 'auto',
+    },
 })
