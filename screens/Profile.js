@@ -613,4 +613,17 @@ const styles = StyleSheet.create({
         alignItems: 'left',
         borderRadius: 20,
     },
+
+    //PRIVACY PAGE TEXT
+    privacyTextTitle:{
+        textAlign: 'left',
+        fontSize: 18,
+        fontFamily: 'boldInter'
+    },
+
+    privacyTextContent:{
+        marginTop: 15,
+        textAlign: 'justify',
+        fontFamily: 'lightInter'
+    },
 })
