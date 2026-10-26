@@ -570,4 +570,30 @@ const styles = StyleSheet.create({
         fontFamily: 'boldNanum',
         paddingHorizontal: 12,
     },
+
+    //SETTING SCREEN
+    settingScreen:{
+        flex: 1,
+        backgroundColor: '#faff97',
+    },
+
+    settingTitle:{
+        fontSize: 15,
+        fontWeight: 'bold',
+        alignItems:'flex-start',
+        justifyContent: 'flex-start',
+        marginTop: 60,
+        paddingBottom: 10,
+        paddingHorizontal: 20,
+    },
+
+    settingTitleSubInfo:{
+        fontsize: 15,
+        fontFamily: 'mediumInter',
+        textAlign: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        marginBottom: "10%",
+        color: "#a9a9a9",
+    },
 })
