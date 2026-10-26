@@ -596,4 +596,21 @@ const styles = StyleSheet.create({
         marginBottom: "10%",
         color: "#a9a9a9",
     },
+
+    settingContainer:{
+        padding: 20,
+        backgroundColor: "#faff97",
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    settingContainerSub:{
+        width: '100%',
+        padding: 20,
+        marginTop: 0,   
+        marginBottom: 30,     
+        backgroundColor: "#ffffff",
+        alignItems: 'left',
+        borderRadius: 20,
+    },
 })
