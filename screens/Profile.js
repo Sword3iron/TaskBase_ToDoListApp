@@ -564,4 +564,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         elevation: 3
     },
+
+    optionSettingText:{
+        fontSize:12,
+        fontFamily: 'boldNanum',
+        paddingHorizontal: 12,
+    },
 })
