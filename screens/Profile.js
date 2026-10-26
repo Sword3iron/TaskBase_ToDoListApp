@@ -664,4 +664,63 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between'
     },
+
+    //ACCOUNT SETTING PAGE
+    settingTypeTitle:{
+        marginTop: 5,
+        marginBottom: 12,
+        paddingLeft: 10,
+        fontSize: 13,
+        fontFamily: 'lightInter',
+    },  
+
+    input:{
+        borderWidth: 1,
+        borderColor: "cccccc",
+        padding: 15,
+        borderRadius: 8,
+        marginBottom: 15,
+        backgroundColor: '#ffffff'
+    },
+
+    uploadPicButton:{
+        backgroundColor: '#63dce3',
+        padding: 12,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginBottom: 10,
+
+    },
+
+    uploadPicText:{
+        color: '#ffffff',
+        fontFamily: "boldInter",
+        fontSize: 14,
+    },
+
+    profileImage:{
+        width: 100,
+        height: 100,
+        borderRadius: 50, 
+        alignSelf:'center',
+        marginBottom: 15,
+        borderColor: '#589940',
+        borderWidth: 4,
+    },
+
+    updateButton:{
+        backgroundColor: '#38f64d',
+        padding: 12,
+        borderRadius: 30,
+        alignItems: 'center',
+        marginBottom: 10,
+        borderWidth: 0.5,
+        borderColor: "#000000"
+    },
+
+    updateButtonText:{
+        color: '#ffffff',
+        fontFamily: "boldInter",
+        fontSize: 14,
+    },
 })
