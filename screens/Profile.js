@@ -530,4 +530,38 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
     },
+
+    //BUTTONS
+    logoutButton:{
+        backgroundColor:'#38f64d',
+        paddingVertical: 12,
+        paddingHorizontal: 110,
+        borderRadius: 25,
+        elevation: 2,
+        marginBottom: 20,
+    },
+
+    logoutText:{
+        color: '#000000',
+        fontWeight: 'bold',
+    },
+
+    dividerLine:{
+        width: '80%',
+        height: 1.5,
+        backgroundColor: '#cccccc',
+        marginVertical: 15,
+    },
+
+    optionSettingButton:{
+        backgroundColor: '#ffffff',
+        borderRadius: 25,
+        padding: 20,
+        width: '80%',
+        flexDirection: 'row',
+        justifyContent:'space-around',
+        alignItems: 'center',
+        marginBottom: 20,
+        elevation: 3
+    },
 })
