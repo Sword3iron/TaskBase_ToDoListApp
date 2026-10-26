@@ -474,4 +474,36 @@ export default ProfilePage;
 
 const styles = StyleSheet.create({
 
+    //MAIN SETTINGS PAGE
+    screenContainer:{
+        flex:1,
+        backgroundColor: '#faff97',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 40,
+    },
+
+    profilePicContainer:{
+        alignItems: 'center',
+        marginBottom: 20,
+        marginTop: 50,
+    },
+
+    profilePicCircle:{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems:'center',
+        marginBottom: '15',
+    },
+
+    profileImage:{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        borderColor: '#589940',
+        borderWidth: 3,
+        
+    },
 })
