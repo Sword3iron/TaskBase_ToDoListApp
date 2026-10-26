@@ -97,7 +97,10 @@ function ProfileMain({ route, navigation })
     )
 }
 
-
+/***************************************************************/
+////****************ACCOUNT SETTINGS PAGE*********************///
+/***************************************************************/
+//Expanded Screen avaliable only on settings page
 function AccountSettingsPage({ route, navigation })
 {
     //set constant variable for colors and usestate for username, password, profile picture
