@@ -657,4 +657,11 @@ const styles = StyleSheet.create({
     rightIcon:{
         marginLeft: 'auto',
     },
+
+    //PERSONALIZATION PAGE
+    personalizationContainer:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
 })
