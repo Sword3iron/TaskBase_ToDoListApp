@@ -12,7 +12,7 @@ const Stack = createStackNavigator(); //set navigation
 /***************************************************************/
 ////**********************MAIN PROFILE************************///
 /***************************************************************/
-function ProfileMain({ route, navigation})
+function ProfileMain({ route, navigation })
 {
     const {username, profilePic} = route.params; //pass parameter for username and profile pictures
     const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //display profile pic with avatar if not profile pic is upload
@@ -98,7 +98,7 @@ function ProfileMain({ route, navigation})
 }
 
 
-function AccountSettingsPage({ route, navigation})
+function AccountSettingsPage({ route, navigation })
 {
     //set constant variable for colors and usestate for username, password, profile picture
     const {colors} = useContext(ThemeContext); //change the colors
@@ -276,7 +276,7 @@ function AccountSettingsPage({ route, navigation})
 /***************************************************************/
 ////****************PERSONALIZATION PAGE**********************///
 /***************************************************************/
-function PersonalizationPage({ route, navigation })
+function PersonalizationPage()
 {
     //color theme when turning on the dark mode
     const { isDarkMode, toggleTheme, colors } = useContext(ThemeContext);
@@ -309,7 +309,7 @@ function PersonalizationPage({ route, navigation })
 /***************************************************************/
 ////*******************NOTIFICATION PAGE**********************///
 /***************************************************************/
-function NotificationPage({ route, navigation })
+function NotificationPage()
 {
     //color theme when turning on the dark mode
     const {colors} = useContext(ThemeContext);
@@ -354,7 +354,7 @@ function NotificationPage({ route, navigation })
 /***************************************************************/
 ////********************DATA PRIVACY PAGE*********************///
 /***************************************************************/
-function DataPrivacyPage({ route, navigation})
+function DataPrivacyPage()
 {
      //color theme when turning on the dark mode
     const {colors} = useContext(ThemeContext);
@@ -412,7 +412,7 @@ function DataPrivacyPage({ route, navigation})
 /***************************************************************/
 ////*******************APP VERSION PAGE***********************///
 /***************************************************************/
-function AppVersionPage({ route, navigation })
+function AppVersionPage()
 {
     //data for extraction on app information
     const appVersionData = [
