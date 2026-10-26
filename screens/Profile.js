@@ -498,12 +498,36 @@ const styles = StyleSheet.create({
         marginBottom: '15',
     },
 
+    //PROFILE PICTURE
     profileImage:{
         width: 60,
         height: 60,
         borderRadius: 30,
         borderColor: '#589940',
         borderWidth: 3,
-        
+    },
+
+    avatarCircle:{
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        backgroundColor: '#4a90e2',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        marginBottom: 50,
+        borderWidth: 0.9,
+    },
+
+    avatarText:{
+        fontSize: 35,
+        color: '#ffffff',
+        fontWeight:'bold',
+    },
+
+    usernameText:{
+        marginTop: 10,
+        fontWeight: 'bold',
+        fontSize: 18,
     },
 })
