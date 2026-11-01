@@ -7,3 +7,5 @@ import { ThemeContext } from '../themeColor/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/Feather';
 import { LinearGradient } from 'expo-linear-gradient';
+
+const Stack = createStackNavigator(); //set navigation
