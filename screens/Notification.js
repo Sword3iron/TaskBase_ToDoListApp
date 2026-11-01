@@ -9,3 +9,14 @@ import Icon from 'react-native-vector-icons/Feather';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const Stack = createStackNavigator(); //set navigation
+
+
+/***************************************************************/
+///***********************NOTIFICATION************************///
+/***************************************************************/
+
+//This is the notification for application.
+//Here user can view task via notification.
+function NotificationPage({ route, navigation}){
+
+}
