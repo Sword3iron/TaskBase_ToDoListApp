@@ -43,4 +43,38 @@ function NotificationPage({ route, navigation}){
 
      //set declaration use state for information extraction
     const [notifications, setNotifications] = useState([]); //set notification
+
+    //function to fetch task for a specific date
+    const fetchNotifications = async () => {
+        try{
+            //fetch task data from API mySQL
+            const res = await fetch(`http://192.168.1.115/taskbaseapp/getNotification.php?userId=${userId}`);
+            const json = await res.json(); //convert data to JSON string
+            console.log("Notification response: ", json) 
+            if(json.success){
+                //if server success, show notification message
+                setNotifications(json.tasks);
+                /*
+                //fetch the task for today noification
+                json.tasks.forEach(task => {
+                    const startDateTime = new Date(`${task.startDateTime}T${task.startTime}`);
+                    const triggerNotifyTime = new Date (startDateTime.getTime() - 30 * 60000);
+
+                    if (triggerNotifyTime > new Date()){
+                        Notifications.scheduleNotificationAsync({
+                            content:{
+                                title: `Your Upcoming Task: ${task.taskTitle}`,
+                                body: `${task.taskDescription}\n at ${task.startTime}`,
+                            },
+                            trigger: triggerNotifyTime,
+                        });
+                    }
+                })
+                */
+            } 
+        }catch(err){
+            //handle network or other errors
+            console.error("Error Fetching Tasks.", err);
+        } 
+    };    
 }
