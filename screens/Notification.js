@@ -147,6 +147,13 @@ function NotificationPage({ route, navigation}){
                         </View>
                     </ScrollView>
                 </View>
+
+                {/**ADD TASK */}
+                <TouchableOpacity style={styles.floatingButton} onPress={handleAddTask}>
+                    <View style={styles.plusButton}>
+                        <FontAwesome name='plus' size={30} color="#8f8f8f"/>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
