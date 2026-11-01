@@ -77,4 +77,11 @@ function NotificationPage({ route, navigation}){
             console.error("Error Fetching Tasks.", err);
         } 
     };    
+
+    //use effect hook to fetch tasks whenever time is met
+    useEffect(() => {  
+        fetchNotifications(); //fetch notification
+        const interval = setInterval(fetchNotifications, 60000); //set interval time
+        return() => clearInterval(interval); //return message
+    }, []);
 }
