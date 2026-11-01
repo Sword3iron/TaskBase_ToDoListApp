@@ -84,4 +84,13 @@ function NotificationPage({ route, navigation}){
         const interval = setInterval(fetchNotifications, 60000); //set interval time
         return() => clearInterval(interval); //return message
     }, []);
+
+    return(
+        <View style={[styles.container, {backgroundColor: colors.background2}]}>
+            <View style={styles.screenContainer}>
+
+        
+            </View>
+        </View>
+    );
 }
