@@ -28,4 +28,16 @@ function NotificationPage({ route, navigation}){
     const handleAddTask = () =>{
         navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to task page, passing parameterszz
     };
+
+    //load font family from folder
+    const [fontLoaded] = useFonts({
+        lightInter: require('../assets/font/static/Inter_18pt-Light.ttf'), // light inter font
+        mediumInter: require('../assets/font/static/Inter_18pt-Medium.ttf'), // medium inter font
+        boldInter: require('../assets/font/static/Inter_18pt-Bold.ttf'), // bold inter font
+        boldNanum: require('../assets/font/nanumgothic/NanumGothic-ExtraBold.ttf'), // bold inter font
+        regularNanum: require('../assets/font/nanumgothic/NanumGothic-Regular.ttf'), // bold inter font
+    });
+
+    //color theme when turning on the dark mode
+    const {colors} = useContext(ThemeContext); //change the colors
 }
