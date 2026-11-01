@@ -93,6 +93,22 @@ function NotificationPage({ route, navigation}){
                     <Text style={[styles.addTaskTitle,{color:colors.text}]}>
                         Notification
                     </Text>
+
+                    <TouchableOpacity onPress={handleProfilePage}>
+                        <View style={styles.profileImageContainer}>
+                            {profilePic ? (
+                                <Image
+                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                style={styles.profileImage}
+                                />
+                            ) : (
+                                <View style={styles.avatarCircle}>
+                                    <Text style={styles.avatarText}>{firstAvatar}</Text>
+                                </View>
+                            )}
+                        </View>
+                    </TouchableOpacity>
+                    
                 </View>
             </View>
         </View>
