@@ -250,4 +250,63 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
+
+    //NOTIFICATIONS
+    notificationWrapper:{
+        height: 650,
+        paddingBottom: 30,
+    }, 
+
+    paddingBoxContainer:{
+        paddingHorizontal: 45,
+        fontFamily: 'mediumInter',
+    },
+
+    emptyBoxContainer:{
+        marginTop: 30,
+    },
+
+    emptyNotificationText:{
+        textAlign: 'center',
+        paddingVertical: 25,
+        fontFamily: 'interInter',
+        fontSize: 15,
+        backgroundColor: 'f3ff4f#',
+    },
+
+    closeButton:{
+        position:'absolute',
+        top: 15,
+        right: 15,
+        zIndex: 10,
+    },
+
+    notificationBox:{ 
+        padding: 20,
+        marginVertical: 6,
+        borderRadius:10,
+        elevation: 5, 
+    },
+
+    taskTitleText:{
+        fontFamily: "boldInter",
+        fontSize: 16,
+        marginBottom: 14,
+    },
+
+    taskDecsText:{
+        fontFamily: "lightInter",
+        fontSize: 13,
+        marginBottom: 14,
+    },
+
+    taskDateText:{
+        fontFamily: "lightInter",
+        fontSize: 12,
+    },
+
+    taskTimeText:{
+        fontFamily: "lightInter",
+        fontSize: 12,
+    },
 });
