@@ -88,8 +88,12 @@ function NotificationPage({ route, navigation}){
     return(
         <View style={[styles.container, {backgroundColor: colors.background2}]}>
             <View style={styles.screenContainer}>
-
-        
+                {/*HEADER*/}
+                <View style={styles.headerRow}>
+                    <Text style={[styles.addTaskTitle,{color:colors.text}]}>
+                        Notification
+                    </Text>
+                </View>
             </View>
         </View>
     );
