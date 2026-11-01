@@ -108,7 +108,44 @@ function NotificationPage({ route, navigation}){
                             )}
                         </View>
                     </TouchableOpacity>
-                    
+                </View>
+
+                {/**NOTIFICATIONS */}
+                <View style={styles.notificationWrapper}>
+                    <ScrollView>
+                        <View style={styles.paddingBoxContainer}>
+                            {notifications.length === 0 ? (
+                                <View style={[styles.emptyBoxContainer, {backgroundColor:colors.background}]}>
+                                    <Text style={styles.emptyNotificationText}>
+                                        No Upcoming Tasks
+                                    </Text>   
+                                </View> 
+                            ) : (   
+                                notifications.map((task) => (
+                                    <LinearGradient 
+                                        key = {task.id} 
+                                        style={styles.notificationBox}
+                                        colors={['#ebf527', '#ffffff']}
+                                        start={{x:0, y:0.2}}
+                                        end={{x:0.5, y:1}}
+                                    >
+                                        <TouchableOpacity
+                                            style={styles.closeButton}
+                                            onPress={() => {
+                                                setNotifications((prev) => prev.filter((t) => t.id !== task.id));
+                                            }}
+                                        >
+                                            <Icon name="close" size={25} color="#f54927"/>
+                                        </TouchableOpacity>
+                                        <Text style = {[styles.taskTitleText, {color:colors.text}]}>{task.taskTitle}</Text>
+                                        <Text style = {styles.taskDecsText}>{task.taskDescription}</Text>
+                                        <Text style = {styles.taskDateText}>{task.startDate}</Text>
+                                        <Text style = {styles.taskTimeText}>{task.startTime}</Text>
+                                    </LinearGradient>
+                                ))
+                            )}
+                        </View>
+                    </ScrollView>
                 </View>
             </View>
         </View>
