@@ -23,4 +23,9 @@ function NotificationPage({ route, navigation}){
     const handleProfilePage = () =>{
         navigation.navigate('Profile', {userId, username, profilePic});
     };
+
+    //for clicking the Add Task Page by navigating to its screen
+    const handleAddTask = () =>{
+        navigation.navigate('AddTask' ,{screen: 'AddNewTask', params:{userId, username, profilePic}}); //navigate to task page, passing parameterszz
+    };
 }
