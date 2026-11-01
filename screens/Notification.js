@@ -158,3 +158,74 @@ function NotificationPage({ route, navigation}){
         </View>
     );
 }
+
+export default NotificationPage;
+
+const styles = StyleSheet.create({
+
+    //NORMAL
+    container:{
+        flex: 1,
+    },
+
+    screenContainer:{
+        paddingTop: 20,
+        alignItem: 'center',
+    },
+
+    profileImageContainer:{
+        width: 60,
+        height: 60,
+        borderRadius: "50%",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    profileImage:{
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        borderColor: '#589940',
+        borderWidth: 3,
+    },
+
+    avatarCircle:{
+        width: 40,
+        height: 40,
+        borderRadius: 30,
+        backgroundColor: '#4A90E2',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        borderWidth: 0.9,
+    },
+
+    avatarText:{
+        fontSize: 24,
+        color: '#ffffff',
+        fontWeight: 'bold',
+    }, 
+  
+    welcomeText:{
+        color: "#646464",
+        fontSize: 14,
+    },  
+  
+    headerRow:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%',
+        paddingHorizontal: 20,
+        marginTop: 10,
+    },  
+ 
+    addTaskTitle: {
+        fontSize: 15,
+        fontFamily: 'boldInter',
+        paddingHorizontal: 25,
+        marginTop: 35,
+        paddingBottom: 15,
+        textAlign: 'left'
+    },
+});
