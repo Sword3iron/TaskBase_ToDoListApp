@@ -132,7 +132,7 @@ function NotificationPage({ route, navigation}){
                                         <TouchableOpacity
                                             style={styles.closeButton}
                                             onPress={() => {
-                                                setNotifications((prev) => prev.filter((t) => t.id !== task.id));
+                                                setNotifications((prev) => prev.filter((t) => t.id !== task.id)); //removing notification from the list 
                                             }}
                                         >
                                             <Icon name="close" size={25} color="#f54927"/>
