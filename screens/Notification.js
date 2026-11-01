@@ -18,5 +18,9 @@ const Stack = createStackNavigator(); //set navigation
 //This is the notification for application.
 //Here user can view task via notification.
 function NotificationPage({ route, navigation}){
-
+    const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
+    const firstAvatar = username ? username.charAt(0).toUpperCase() : '?'; //if not profile picture, display first letter avatar of username
+    const handleProfilePage = () =>{
+        navigation.navigate('Profile', {userId, username, profilePic});
+    };
 }
