@@ -228,4 +228,26 @@ const styles = StyleSheet.create({
         paddingBottom: 15,
         textAlign: 'left'
     },
+
+    //ADD TASK BUTTON
+    floatingButton:{
+        position: 'absolute',
+        top: 645,
+        right: 20,
+        zIndex: 10,
+    },
+
+    plusButton:{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: '#f3ff4f',
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
 });
