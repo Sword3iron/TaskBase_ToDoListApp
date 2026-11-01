@@ -40,4 +40,7 @@ function NotificationPage({ route, navigation}){
 
     //color theme when turning on the dark mode
     const {colors} = useContext(ThemeContext); //change the colors
+
+     //set declaration use state for information extraction
+    const [notifications, setNotifications] = useState([]); //set notification
 }
