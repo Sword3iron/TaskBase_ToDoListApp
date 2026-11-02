@@ -5,3 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 //set navigation 
 const Tab = createBottomTabNavigator(); 
+
+function TabNavigator({route}){
+    
+}
