@@ -60,7 +60,7 @@ function AddNewTask({route, navigation}){
                     setStartTime(selectedDate); //set start time
                     break;
                 case 'endTime':
-                    setEndTime(selectedDate); //set end tiem
+                    setEndTime(selectedDate); //set end time
                     break;
                 case 'startDate':
                     setStartDate(selectedDate); //set start date
