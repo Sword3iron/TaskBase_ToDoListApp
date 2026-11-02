@@ -7,5 +7,6 @@ import { Ionicons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator(); 
 
 function TabNavigator({route}){
-    
+    const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
+
 }
