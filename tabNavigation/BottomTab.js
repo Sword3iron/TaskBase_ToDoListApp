@@ -9,4 +9,17 @@ const Tab = createBottomTabNavigator();
 function TabNavigator({route}){
     const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
 
+    return(
+        <Tab.Navigator
+            screenOptions={{
+                headerShown: false,
+                tabBarStyle: styles.tabNavgationBar,
+                tabBarShowLabel: false,
+                tabBarActiveTintColor: '#b0b330',
+                tabBarInactiveTintColor: '#b0b330',
+            }}
+        >
+            
+        </Tab.Navigator>
+    )
 }
