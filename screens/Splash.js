@@ -30,4 +30,11 @@ export default SplashPage;
 
 const styles = StyleSheet.create({
 
+    //CONTAINER STYLE
+    container:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    }
 });
