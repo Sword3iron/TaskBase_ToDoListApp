@@ -25,3 +25,5 @@ function SplashPage()
         </View>
     )
 }
+
+export default SplashPage;
