@@ -46,6 +46,15 @@ function TabNavigator({route}){
                     ),
                 }}
             />
+
+            {/** NOTIFICATION*/}
+            <Tab.Screen name="Notification" component={NotificationPage}  
+                    initialParams={{userId, username, profilePic}} 
+                    options={{tabBarIcon:({ color, size}) => (
+                    <Ionicons name="notifications" color={color} size={30}/>
+                    ),
+                }}
+            />
         </Tab.Navigator>
     )
 }
