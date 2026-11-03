@@ -5,5 +5,6 @@ function SplashPage()
         const timer = setTimeout(() => {
             navigation.replace('Login') //Navigate to login page as soon as splash screen ends
         }, 2000); //display splash screen for  second
-    })
+        return() => clearTimeout(timer);//clear timeout when component unmounts
+    }, [navigation]); //execuete useEffect only when navigation changes
 }
