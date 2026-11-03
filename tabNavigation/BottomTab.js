@@ -19,7 +19,7 @@ function TabNavigator({route}){
                 tabBarInactiveTintColor: '#b0b330',
             }}
         >
-            
+
             {/** HOME */}
             <Tab.Screen name="Home" component={HomePage} 
                     initialParams={{userId, username,   profilePic}} 
@@ -29,6 +29,16 @@ function TabNavigator({route}){
                 }}
             />
 
+            {/** TASK */}
+            <Tab.Screen name="Task" component={TaskPage} 
+                    initialParams={{userId, username, profilePic}} 
+                    options={{tabBarIcon:({ color, size}) => (
+                    <Ionicons name="checkbox" color={color} size={30}/>
+                    ),
+                }}
+            />
+
+            
         </Tab.Navigator>
     )
 }
