@@ -1,3 +1,7 @@
+import React, { useEffect } from 'react';
+import { VIew, StyleSheet, Image } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 function SplashPage()
 {
     useEffect(() => {
