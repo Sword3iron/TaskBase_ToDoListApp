@@ -38,7 +38,14 @@ function TabNavigator({route}){
                 }}
             />
 
-            
+            {/** CALENDAR*/}
+            <Tab.Screen name="Calender" component={CalenderPage}  
+                    initialParams={{userId, username, profilePic}} 
+                    options={{tabBarIcon:({ color, size}) => (
+                    <Ionicons name="calendar" color={color} size={30}/>
+                    ),
+                }}
+            />
         </Tab.Navigator>
     )
 }
