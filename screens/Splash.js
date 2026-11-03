@@ -13,4 +13,10 @@ function SplashPage()
         }, 2000); //display splash screen for  second
         return() => clearTimeout(timer);//clear timeout when component unmounts
     }, [navigation]); //execuete useEffect only when navigation changes
+
+    return (
+        <View>
+            
+        </View>
+    )
 }
