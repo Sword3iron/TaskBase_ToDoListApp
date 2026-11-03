@@ -36,5 +36,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
-    }
+    },
+
+    logo:{
+        width: 200,
+        height: 200,
+        resizeMode: 'contain',
+    },
 });
