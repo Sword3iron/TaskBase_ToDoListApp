@@ -20,6 +20,15 @@ function TabNavigator({route}){
             }}
         >
             
+            {/** HOME */}
+            <Tab.Screen name="Home" component={HomePage} 
+                    initialParams={{userId, username,   profilePic}} 
+                    options={{tabBarIcon:({ color, size}) => (
+                    <Ionicons name="home" color={color} size={30}/>
+                    ),
+                }}
+            />
+
         </Tab.Navigator>
     )
 }
