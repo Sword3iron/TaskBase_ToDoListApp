@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 //IMPORT SCREEN OF HOME, CALENDAR, TASK, NOTIFICATION AND ADD TASK
 import HomePage from '../screens/Home';
-import CalenderPage from '../screens/Calendar';
+import CalendarPage from '../screens/Calendar';
 import TaskPage from '../screens/Task';
 import NotificationPage from '../screens/Notification';
 import AddTaskPage from '../screens/AddTask';
@@ -46,7 +46,7 @@ function TabNavigator({route}){
             />
 
             {/** CALENDAR*/}
-            <Tab.Screen name="Calender" component={CalenderPage}  
+            <Tab.Screen name="Calender" component={CalendarPage}  
                     initialParams={{userId, username, profilePic}} 
                     options={{tabBarIcon:({ color, size}) => (
                     <Ionicons name="calendar" color={color} size={30}/>
