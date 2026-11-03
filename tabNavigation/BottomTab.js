@@ -3,6 +3,13 @@ import {StyleSheet} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
+//IMPORT SCREEN OF HOME, CALENDAR, TASK, NOTIFICATION AND ADD TASK
+import HomePage from '../screens/Home';
+import CalenderPage from '../screens/Calendar';
+import TaskPage from '../screens/Task';
+import NotificationPage from '../screens/Notification';
+import AddTaskPage from '../screens/AddTask';
+
 //set navigation 
 const Tab = createBottomTabNavigator(); 
 
