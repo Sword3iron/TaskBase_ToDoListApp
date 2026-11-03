@@ -27,3 +27,7 @@ function SplashPage()
 }
 
 export default SplashPage;
+
+const styles = StyleSheet.create({
+
+});
