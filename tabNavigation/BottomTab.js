@@ -69,3 +69,9 @@ function TabNavigator({route}){
         </Tab.Navigator>
     )
 }
+
+export default TabNavigator;
+
+const styles = StyleSheet.create({
+    
+})
