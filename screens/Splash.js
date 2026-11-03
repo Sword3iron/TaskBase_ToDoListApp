@@ -16,7 +16,12 @@ function SplashPage()
 
     return (
         <View>
-            
+
+            {/*DISPLAY SPLASH SCREEN IMAGE LOGO*/}
+            <Image
+                source = {require('..assets/images/TaskBase.png')}
+                style = {styles.logo}
+            />
         </View>
     )
 }
