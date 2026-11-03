@@ -55,6 +55,17 @@ function TabNavigator({route}){
                     ),
                 }}
             />
+
+            {/** ADD TASK*/}
+            <Tab.Screen name="AddTask" component={AddTaskPage}  
+                    initialParams={{userId, username, profilePic}} 
+                    options={{
+                        tabBarButton: () => null,
+                        tabBarItemStyle: {display: 'none'},
+                        tabBarStyle: styles.tabNavgationBar,
+                        headerShown: false
+                }}
+            />
         </Tab.Navigator>
     )
 }
