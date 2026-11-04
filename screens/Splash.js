@@ -4,10 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator(); //Set Navigation Stack
 
-function SplashPage({ navigation})
+function SplashPage({ navigation })
 {
     useEffect(() => {
-
+        //set timeout for splash screen to navigate to login page 
         const timer = setTimeout(() => {
             navigation.replace('Login') //Navigate to login page as soon as splash screen ends
         }, 2000); //display splash screen for  second
