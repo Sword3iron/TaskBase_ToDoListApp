@@ -2,6 +2,10 @@ import React, {createContext, useState} from 'react';
 
 export const ThemeContext = createContext();  //pass context, the theme colors, to each seperate pages
 
+
+/***************************************************************/
+////********************THEME PROVIDER************************///
+/***************************************************************/
 function ThemeProvider ({ children })
 {
     const [isDarkMode, setIsDarkMode] = useState(false); //usestate for switching colors set to flase
