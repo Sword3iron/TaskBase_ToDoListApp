@@ -13,6 +13,10 @@ import AddTaskPage from '../screens/AddTask';
 //set navigation 
 const Tab = createBottomTabNavigator(); 
 
+
+/***************************************************************/
+////*********************TAB NAVIGATOR************************///
+/***************************************************************/
 function TabNavigator({route}){
     const { userId, username, profilePic } = route.params; //pass parameters for both profile page and username
 
