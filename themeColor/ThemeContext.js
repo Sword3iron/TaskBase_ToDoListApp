@@ -19,7 +19,15 @@ function ThemeProvider ({ children })
             background3: isDarkMode ? '#2b2b2b' : "#faff97", //black, yellow
             text: isDarkMode ? '#ffffff' : '#000000', //black, white
         }
-    }
+    };
+
+    return(
+        <ThemeContext.Provider value={theme}>
+
+            {/**Provide Children for color */}
+            {children} 
+        </ThemeContext.Provider>
+    )
 }
 
 
