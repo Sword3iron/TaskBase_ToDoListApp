@@ -18,5 +18,19 @@ export default function App()
             NavigatorBar('hidden');
         }
     })
+
+    return(
+        <ThemeProvider>
+            <NavigationContainer>
+                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="Splash" component={Splash} screenOptions={{ headerShown: false }} />
+                    <Stack.Screen name="Login" component={LoginPage} screenOptions={{ headerShown: false }} />
+                    <Stack.Screen name="TabBottom" component={TabNavigator} screenOptions={{ headerShown: false }} />
+                    <Stack.Screen name="SignUp" component={SignUpPage} screenOptions={{ headerShown: false }} />
+                    <Stack.Screen name="Profile" component={ProfilePage} screenOptions={{ headerShown: false }} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </ThemeProvider>
+    )
 }
 
