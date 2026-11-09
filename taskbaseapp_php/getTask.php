@@ -1,43 +1,63 @@
 <?php
+header('Content-Type: application/json'); //set connection type to json
 include 'db.php'; //include database connecttion file
 
 //read the raw post data and decode it from JSON into PHP
 $data = json_decode(file_get_contents("php://input"));
+
+//Validating the data's existence that required field exists
+if (!$data || !isset($data->userId) || !isset($data->date)){
+  echo json_encode([
+    "success" => false, //set to false to indicate missing data
+    "message" => "Missing user Id or month parameters.", //display message
+  ]);
+  exit;
+}
+
 $userId = $data->userId;
 $date = $data->date;
 
 //Prepare SQL statement
 $sql = "SELECT id, taskTitle, taskDescription, taskCategory, startTime, endTime, startDate, endDate, taskProgress
         FROM tasks 
-        WHERE userId = '$userId' AND startDate = '$date' ORDER BY startTime ASC";
+        WHERE userId = ? AND startDate = ?
+        ORDER BY startTime ASC";
 
-//execuete the query
-$result = $conn->query($sql);
+$stmt = $conn->prepare($sql);
 
-//check the array of the tasks
+if ($stmt === false){
+  echo json_encode([
+      "success" => false,
+      "message" => "Database error: " . $conn->error
+    ]);
+    exit;
+}
+
+//Bind the parameters
+// use 's' as strings for parameters
+$stmt->bind_param("ss", $userId, $date);
+
+//Execute the query
+$stmt->execute();
+$result = $stmt->get_result();
 $tasks = [];
 
-//check if a database exist
-if($result->num_rows > 0)
-{
-  //fetch the data user in an associative array
-    while($row = $result->fetch_assoc())
-    {
-        $tasks[] = $row;
-    }
-     //if task found, return success along with user details
-    echo json_encode([
-                      "success" => true,
-                      "tasks" => $tasks
-                    ]);
+if ($result->num_rows > 0){
+  while ($row = $result->fetch_assoc()){
+      $tasks[] = $row;
+  }
+  echo json_encode([
+    "success" => true,
+    "tasks" => $tasks
+  ]);
 }else{
-  //if task doesn't found, return failure with message and debug info
-    echo json_encode([
-                      "success" => true,
-                      "tasks" => []
-                    ]);
+  echo json_encode([
+    "success" => true,
+    "tasks" => []
+  ]);
 }
 
 //close database connection
+$stmt->close();
 $conn->close();
 ?>
