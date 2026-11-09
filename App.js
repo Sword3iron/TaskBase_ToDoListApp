@@ -13,18 +13,10 @@ import ThemeProvider from './themeColor/ThemeContext';
 
 export default function App()
 {
-    return(
-        <View style={style.container}>
-            <Text> Welcome! </Text>
-        </View>
-    );
+    useEffect(() => {
+        if(Platform.OS === 'android'){
+            NavigatorBar('hidden');
+        }
+    })
 }
 
-const style = StyleSheet.create({
-    container:{
-        flex: 1,
-        backgroundColor: '#ffffff',
-        alignItems:'center',
-        justifyContent:'center;'
-    }
-})
