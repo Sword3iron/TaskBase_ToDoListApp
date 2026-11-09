@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image, Dimensions, StyleSheet, FlatList, ScrollView, RefreshControl} from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { ThemeContext } from '../themeColor/ThemeContext';
@@ -9,7 +9,7 @@ import { fetchWeatherApi } from 'openmeteo';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const { width } = Dimensions.get('window'); //Get Window width for screen fit
-const Stack = createStackNavigator(); //Set Navigation Stack
+const Stack = createNativeStackNavigator(); //Set Navigation Stack
 
 /***************************************************************/
 ///*************************HOMEPAGE**************************///
