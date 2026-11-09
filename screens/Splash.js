@@ -15,7 +15,7 @@ function SplashPage({ navigation })
     }, [navigation]); //execuete useEffect only when navigation changes
 
     return (
-        <View>
+        <View style = {styles.container}>
 
             {/*DISPLAY SPLASH SCREEN IMAGE LOGO*/}
             <Image
