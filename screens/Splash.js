@@ -4,6 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator(); //Set Navigation Stack
 
+/***************************************************************/
+///**********************SPLASH SCREEN************************///
+/***************************************************************/
 function SplashPage({ navigation })
 {
     useEffect(() => {
