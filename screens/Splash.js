@@ -19,7 +19,7 @@ function SplashPage({ navigation })
 
             {/*DISPLAY SPLASH SCREEN IMAGE LOGO*/}
             <Image
-                source = {require('..assets/images/TaskBase.png')}
+                source = {require('../assets/TaskBase.png')}
                 style = {styles.logo}
             />
         </View>
