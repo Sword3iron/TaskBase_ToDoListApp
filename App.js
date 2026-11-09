@@ -1,5 +1,9 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useEffect} from 'react';
+import { Platform } from 'react-native';
+import * as NavigatorBar from 'expo-navigation-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 export default function App()
 {
