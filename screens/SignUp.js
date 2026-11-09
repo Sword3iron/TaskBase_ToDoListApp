@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {View, Text, Alert, TextInput, TouchableOpacity, StyleSheet,} from 'react-native';
 import { useFonts } from 'expo-font';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Stack = createStackNavigator(); //set navigation 
+const Stack = createNativeStackNavigator(); //set navigation 
 
 function SignUpPage({ navigation })
 {
