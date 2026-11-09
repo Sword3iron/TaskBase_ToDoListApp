@@ -1,61 +1,95 @@
 <?php
+header('Content-Type: application/json'); //set connection type to json
 include 'db.php'; //include database connecttion file
 
 //read the raw post data and decode it from JSON into PHP
 $data = json_decode(file_get_contents("php://input"));
-$currentUsername = $data->currentUsername;
-$newUsername = $data->username;
-$newPassword = password_hash($data->password, PASSWORD_DEFAULT);
-$profilePic = $data->profilePic;
-$profilePicFilename = null;
+
+if (!isset($data->currentUsername, $data->username, $data->password)){
+  echo json_encode([
+    "success" => false, //set to false to indicate missing data
+    "message" => "Missing user Id parameters.", //display message
+  ]);
+  exit;
+}
+
+$currentUsername = $data->currentUsername; //current username
+$newUsername = $data->username; //new username
+$newPassword = password_hash($data->password, PASSWORD_DEFAULT); //new password 
+$profilePic = $data->profilePic ?? null; //profile picture
+$profilePicFilename = null; //name of the profile picture
+
+//Handle profile picture upload if provided
 if ($profilePic)
 {
-    $profilePicFilename = uniqid() . ".jpg";
-    file_put_contents("profilePicUpload/". $profilePicFilename, base64_decode($profilePic));
+    //ensuring the upload directory exist and secured
+    $uploadDir = "profilePicUpload/";
+    if(!is_dir($uploadDir)){
+        mkdir($uploadDir, 0755, true);
+    }
+
+    //Decode base and generate a unique filename
+    $decodeData = base64_decode($profilePic);
+    if($decodeData !== false){
+        $profilePicFilename = uniqid() . ".jpg";
+        file_put_contents($uploadDir . $profilePicFilename, $decodeData);
+    }
 }
 
-//Prepare SQL statement
-$sql = "UPDATE users SET username = '$newUsername', password='$newPassword'". 
-       ($profilePicFilename ? ", profilePic='$profilePicFilename'" : "") . 
-       " WHERE username= '$currentUsername'"; 
+//Preapre the SQL statement
+if($profilePicFilename){
+    $sql = "UPDATE users SET username = ?, 
+                             password = ?, 
+                             profilePic = ? 
+            WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    //using 's' value as a string
+    $stmt->bind_param("ssss", $newUsername, 
+                              $newPassword, 
+                              $profilePicFilename, 
+                              $currentUsername);
+}else{
+    $sql = "UPDATE users SET username = ?, 
+                             password = ?
+            WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    //using 's' value as a string
+    $stmt->bind_param("sss", $newUsername, 
+                              $newPassword, 
+                              $currentUsername);
+}
 
-//execuete the query
-$result = $conn->query($sql);
+//Exeuete the update query
+$updateSuccess = $stmt->execute();
+$stmt->close();
 
-//check if result is true
-if ($result === TRUE)
-{
-    //SQL statement on username 
-    $selectSql = "SELECT id, username, email, profilePic FROM users WHERE username='$newUsername'";
-    $result = $conn->query($selectSql);
+if($updateSuccess){
+    //Prepare the SQL statement om select 
+    $selectSql = "SELECT id, username, email, profilePic 
+                  FROM users 
+                  WHERE username = ?";
+    $selectStmt = $conn->prepare($selectSql);
+    $selectStmt->bind_param("s", $newUsername);
+    $selectStmt->execute();
+    $result = $selectStmt->get_result();
 
-    //check if result is true
-    if($result->num_rows > 0)
-    {
-        //fetch the data user in an associative array
+    if($result->num_rows > 0){
         $user = $result->fetch_assoc();
-
-        //if user found, return success along with user details
         echo json_encode([
-            "success" => true, 
+            "success" => true,
             "user" => $user
         ]);
-    }
-    else
-    {
-        //if user doesn't found, return failure with message and debug info
+    }else{
         echo json_encode([
-            "success" => false, 
-            "message" => "user not found"
+            "success"=>false,
+            "message"=>"User Not Found"
         ]);
     }
-}
-else
-{
-    //if updated failed, return message
+    $selectStmt->close();
+}else{
     echo json_encode([
-        "success" => false, 
-        "message" => "Update Failed"
+        "success" => false,
+        "message" => "Database query preparation failed."
     ]);
 }
 
