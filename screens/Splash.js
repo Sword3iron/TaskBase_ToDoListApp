@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Stack = createStackNavigator(); //Set Navigation Stack
+const Stack = createNativeStackNavigator(); //Set Navigation Stack
 
 /***************************************************************/
 ///**********************SPLASH SCREEN************************///
