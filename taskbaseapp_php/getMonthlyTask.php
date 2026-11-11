@@ -17,7 +17,7 @@ if (!isset($data->userId) || !isset($data->month)){
 }
 
 //Extracting each value of the database
-$userId = $data->userId;; //user id
+$userId = $data->userId; //user id
 $month = $data->month;//month 
 $monthWildcard = $month . '%'; //create wildcard safety for SQL query
 
@@ -50,13 +50,13 @@ $tasks = [];
 
 //Fetch the data into one array
 while ($row = $result->fetch_assoc()){
-  $task[] = $row;
+  $tasks[] = $row;
 }
 
 //return the result
 echo json_encode([
   "success" => true,
-  "task" => $tasks,
+  "tasks" => $tasks,
   "count" => count($tasks)
 ]);
 
