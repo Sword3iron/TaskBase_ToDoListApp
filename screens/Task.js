@@ -115,6 +115,16 @@ function TaskCalanderPage({ route, navigation})
         });
     }
 
+    //function to generate time slot
+    const generateTimeSlots = () => {
+        let currentTime = moment().startOf("hour");  //set an hour of time
+        let slots = []; //create an array to store hour
+        for (let i=0; i<7; i++){ //set 7 column of hours
+            slots.push(currentTime.clone().add(i, "hours")); //clone each column
+        }
+        setTimeSlots(slots); //set time slot to its respective slot
+    }
+
     //function to extract task for time
     const getTaskForTime = (slot) => {
         return tasks.filter(task => { //find the time based on today date
@@ -125,7 +135,7 @@ function TaskCalanderPage({ route, navigation})
 
     return(
         <View style={styles.container}>
-            <View style={[style.screenContainer, {backgroundColor: colors.background2}]}>
+            <View style={[styles.screenContainer, {backgroundColor: colors.background2}]}>
 
                 {/**HEADER */}
                 <View style={styles.headerRow}>
