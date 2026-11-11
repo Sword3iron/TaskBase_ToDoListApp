@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { Platform } from 'react-native';
-import * as NavigatorBar from 'expo-navigation-bar';
+import * as NavigationBar from 'expo-navigation-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -11,13 +11,13 @@ import ProfilePage from "./screens/Profile";
 import Splash from "./screens/Splash";
 import ThemeProvider from './themeColor/ThemeContext';
 
-const Stack = createNativeStackNavigator
+const Stack = createNativeStackNavigator();
 
 export default function App()
 {
-    useEffect(() => {
+    useEffect(()=> {
         if(Platform.OS === 'android'){
-            NavigatorBar('hidden');
+            NavigationBar.setVisibilityAsync('hidden');
         }
     })
 
