@@ -218,7 +218,7 @@ function TaskCalanderPage({ route, navigation})
                                             </TouchableOpacity>
                                         )}
                                     </View>
-                                </View>
+                                    </View>
                             )
                         })}
                     </ScrollView>
