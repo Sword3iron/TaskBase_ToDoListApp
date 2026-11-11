@@ -265,9 +265,9 @@ function CalendarPage({route, navigation})
                         </View>
 
                         {/**PERCENTAGES ROWS */}
-                        <View style={styles.percantageRow}>
+                        <View style={styles.percentageRow}>
                             {/**COMPLETED */}
-                            <View style={styles.percantageBox}>
+                            <View style={styles.percentageBox}>
                                 <Image source = {require('../assets/images/completed.png')} 
                                         style = {styles.smallImage}
                                 />
@@ -278,7 +278,7 @@ function CalendarPage({route, navigation})
                             </View>
                             
                             {/**INCOMPLETED */}
-                            <View style={styles.percantageBox}>
+                            <View style={styles.percentageBox}>
                                 <Image source = {require('../assets/images/incompleted.png')} 
                                             style = {styles.smallImage}
                                 />
@@ -290,9 +290,9 @@ function CalendarPage({route, navigation})
                         </View>
 
                         {/**PERCENTAGES ROWS */}
-                        <View style={styles.percantageRow}>
+                        <View style={styles.percentageRow}>
                             {/**IN PROGRESS */}
-                            <View style={styles.percantageBox}>
+                            <View style={styles.percentageBox}>
                                 <Image source = {require('../assets/images/inProgress.png')} 
                                         style = {styles.smallImage}
                                 />
@@ -302,7 +302,7 @@ function CalendarPage({route, navigation})
                                 </View>
                             </View>
                             {/**CANCELLED */}
-                            <View style={styles.percantageBox}>
+                            <View style={styles.percentageBox}>
                                 <Image source = {require('../assets/images/cancelled.png')} 
                                         style = {styles.smallImage}
                                 />
@@ -466,6 +466,30 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,  
+    },
+
+    percentageRow:{
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
+    percentageBox:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#ffffff',
+        marginBottom: 5,
+        width: 150,
+        height: 100,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#cccccc',
+        paddingHorizontal: 10,
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 4,
     },
 
     percentageText:{
