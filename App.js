@@ -11,6 +11,8 @@ import ProfilePage from "./screens/Profile";
 import Splash from "./screens/Splash";
 import ThemeProvider from './themeColor/ThemeContext';
 
+const Stack = createNativeStackNavigator
+
 export default function App()
 {
     useEffect(() => {
