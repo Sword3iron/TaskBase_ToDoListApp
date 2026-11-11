@@ -42,7 +42,7 @@ function ProfileMain({ route, navigation })
     const handleLogout = async () => {
         try {
             //fetch task data from API mySQL
-            const res = await fetch('http://192.168.1.115/taskbaseapp/logout.php',{
+            const res = await fetch('http://192.168.1.125/taskbase/logout.php',{
                 method: 'GET', //use GET method
             });
             const data = await res.json();
@@ -64,7 +64,7 @@ function ProfileMain({ route, navigation })
                 <View style={styles.profilePicCircle}>
                 {profilePic ? (
                     <Image
-                    source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                    source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                     style={styles.profileImage}
                     />
                 ) : (
@@ -174,7 +174,7 @@ function AccountSettingsPage({ route, navigation })
         };
 
         //fetch login insertion from API mySQL
-        fetch('http://192.168.1.115/taskbaseapp/update.php', {
+        fetch('http://192.168.1.125/taskbase/update.php', {
             method: 'POST', //user method post
             headers: { 'Content-Type' : 'application/json'}, //JSON content
             body: JSON.stringify(updateData) //convert data to JSON string

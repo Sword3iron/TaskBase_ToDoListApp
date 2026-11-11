@@ -88,7 +88,7 @@ function TaskCalanderPage({ route, navigation})
         //formate date for backend
         const todayDate = moment().format("YYYY-MM-DD");
         //fetch task data from API mySQL
-        fetch('http://192.168.1.115/taskbaseapp/getTask.php',{
+        fetch('http://192.168.1.125/taskbase/getTask.php',{
             method: 'POST', //use method post
             headers: { 'Content-Type' : 'application/json' }, //JSON content
             body: JSON.stringify({ //convert data to JSON string
@@ -138,7 +138,7 @@ function TaskCalanderPage({ route, navigation})
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (
@@ -284,7 +284,7 @@ function TaskList({ route, navigation })
          //formate date for backend
         const formattedDate = formattedDateDBTask(date);
          //fetch task data from API mySQL
-        fetch('http://192.168.1.115/taskbaseapp/getTask.php',{
+        fetch('http://192.168.1.125/taskbase/getTask.php',{
             method: 'POST', //use method post
             headers: { 'Content-Type' : 'application/JSON' }, //JSON content
             body: JSON.stringify({ //convert data to JSON string
@@ -340,7 +340,7 @@ function TaskList({ route, navigation })
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (

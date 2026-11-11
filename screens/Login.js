@@ -48,7 +48,7 @@ function LoginPage({ navigation })
         if (!valid) return;
 
         //fetch login insertion from API mySQL
-        fetch("http://192.168.1.115/taskbaseapp/login.php", {
+        fetch("http://192.168.1.125/taskbase/login.php", {
             method: 'POST', //use method post
             headers: { 'Content-Type':'application/json'}, //JSON content
             body: JSON.stringify({ email, password}) //convert data to JSON string
@@ -116,7 +116,7 @@ function LoginPage({ navigation })
 
 export default LoginPage;
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
 
     //SCREEN CONTAINER
     screenContainer:{ 

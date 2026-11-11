@@ -61,7 +61,7 @@ function CalendarPage({route, navigation})
     //function used to get monthly task data
     const fetchMonthlyTasks = async (month) => {
         //fetch task data from API mySQL
-        fetch("http://192.168.1.115/taskbaseapp/getMonthlyTask.php", {
+        fetch("http://192.168.1.125/taskbase/getMonthlyTask.php", {
             method: "POST", //use method post
             headers: {"Content-Type" : "application/json"}, //JSON content
             body: JSON.stringify({ userId, month}), //convert data to JSON string
@@ -86,7 +86,7 @@ function CalendarPage({route, navigation})
     //function used to get daily task data
     const fetchTasks = async (date) => {
          //fetch task data from API mySQL
-        fetch("http://192.168.1.115/taskbaseapp/getTask.php", {
+        fetch("http://192.168.1.125/taskbase/getTask.php", {
             method: "POST",  //use method post
             headers: {"Content-Type" : "application/json"}, //JSON content
             body: JSON.stringify({ userId, date}), //convert data to JSON string
@@ -226,7 +226,7 @@ function CalendarPage({route, navigation})
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (

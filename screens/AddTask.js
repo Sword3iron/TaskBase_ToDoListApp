@@ -111,7 +111,7 @@ function AddNewTask({route, navigation}){
         };
 
         //send task data to API mySQL
-        fetch('http://192.168.1.115/taskbaseapp/insertTask.php',{
+        fetch('http://192.168.1.125/taskbase/insertTask.php',{
             method: 'POST', //use method post
             headers: { 'Content-Type' : 'application/JSON' }, //JSON content type
             body: JSON.stringify(taskData), //convert data to JSON string
@@ -161,7 +161,7 @@ function AddNewTask({route, navigation}){
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (
@@ -443,7 +443,7 @@ function EditTask({route, navigation}){
         };
 
         //send task data to API mySQL
-        fetch('http://192.168.1.115/taskbaseapp/editTask.php', {
+        fetch('http://192.168.1.125/taskbase/editTask.php', {
             method: 'POST', //use method post
             headers: {'Content-Type':'application/json'}, //JSON content type
             body: JSON.stringify(taskData),  //convert data to JSON string
@@ -480,7 +480,7 @@ function EditTask({route, navigation}){
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://192.168.1.115/taskbaseapp/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (
