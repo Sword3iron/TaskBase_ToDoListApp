@@ -14,19 +14,18 @@ $sql = "SELECT id, taskTitle, taskDescription, startDate, startTime
         AND NOW() 
             BETWEEN DATE_SUB(CONCAT(startDate, ' ', startTime), INTERVAL 30 MINUTE)
                 AND CONCAT(startDate, ' ', startTime)
-        ORDER BY startDate ASC, startTIME ASC";
+        ORDER BY startDate ASC, startTime ASC";
 
 $tasks = [];
-
-//execuete the query
-$result = $conn->query($sql);
 
 //Prepare the injection statement
 if ($stmt = $conn->prepare($sql)){
     //Bind the parameters with the value 'i' for integer
     $stmt->bind_param('i', $userId);
+
     //Execute the query
     $stmt->execute();
+    
     //Get the result
     $result = $stmt->get_result();
 
