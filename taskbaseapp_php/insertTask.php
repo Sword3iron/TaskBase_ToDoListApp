@@ -19,7 +19,7 @@ $endDate         = $data->endDate ?? null; //the end date for a task
 $startTime       = $data->startTime ?? null; //the start time for a task
 $endTime         = $data->endTime ?? null; //the end time for a task
 $taskCategory    = $data->taskCategory ?? null; //a task category
-$taskProgress    = $data->taskProgress ?? null; //the progress of a task
+$taskProgress    = $data->taskProgress ?? null;  //the progress of a task
 
 //Prepare SQL statement
 $sql = "INSERT INTO tasks (userId, taskTitle, taskDescription, startDate, endDate, startTime, endTime, taskCategory, taskProgress)
