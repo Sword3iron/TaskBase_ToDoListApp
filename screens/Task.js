@@ -198,12 +198,12 @@ function TaskCalanderPage({ route, navigation})
                                         </Text>
                                     </View>
                                     <View style={styles.rightColumnBox}>
-                                        {slotTasks.length > 0 ? ( //make the clone of slot tasks
-                                            slotTasks.map((task, idx) => (  //extarct the task and index for each start time
+                                        {slotTasks.length > 0 ? (
+                                            slotTasks.map((task, idx) => (  
                                                 <TouchableOpacity    
-                                                    key={idx}  //get the index of tasks
+                                                    key={idx}  
                                                     style={styles.taskContainer} 
-                                                    onPress={() => navigation.navigate("TaskList")} //navigate to task list
+                                                    onPress={() => navigation.navigate("TaskList")} 
                                                     >
                                                     <Text style={styles.taskTitle}>{task.taskTitle}</Text>
                                                     <Text style={styles.taskTime}>
@@ -233,7 +233,7 @@ function TaskCalanderPage({ route, navigation})
 
             </View>
         </View>
-    )
+    );
 }
 
 /***************************************************************/
@@ -334,14 +334,14 @@ function TaskList({ route, navigation })
     }
 
     return(
-        <View style={[style.container,{backgroundColor:colors.background2}]}>
+        <View style={[styles.container,{backgroundColor:colors.background2}]}>
             <View style={styles.screenContainer}>
 
                 {/*HEADER */}
                 <View style={[styles.headerRow,{backgroundColor:colors.background2}]}>
-                    <View style={[styles.addTaskTitle,{color:colors.text}]}>
+                    <Text style={[styles.addTaskTitle,{color:colors.text}]}>
                         Task For Today
-                    </View>
+                    </Text>
 
                     {/**PROFILE IMAGE */}
                     <TouchableOpacity
@@ -365,10 +365,10 @@ function TaskList({ route, navigation })
                 {/**TASK LIST */}
                 <View style = {styles.todayTaskWrapper}>
                     <ScrollView
-                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>} //refresh the page
+                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
                     >
                         <View style={[styles.todayTaskContainer,{backgroundColor:colors.background2}]}>
-                            {tasks.length === 0 ? ( //if no task today, display message for no tasks
+                            {tasks.length === 0 ? ( 
                                 <View style={styles.todayTaskEmptyTaskBox}>
                                     <Text style={[styles.todayTaskEmptyTaskText,{color:colors.text}]}> 
                                         No Task Today.
@@ -377,8 +377,8 @@ function TaskList({ route, navigation })
                             ) : ( 
                                 tasks.map((task, index) => (
                                 <TouchableOpacity  
-                                    key={index} //identify the index of task under key
-                                    onPress={() =>handleEditTask(task)} //navigate to edit task page when click
+                                    key={index}
+                                    onPress={() =>handleEditTask(task)} 
                                     >
 
                                     <LinearGradient 
@@ -395,8 +395,8 @@ function TaskList({ route, navigation })
                                             </Text>
                                             <View style={styles.todayTaskProgressBox}> 
                                                 <Image
-                                                    source={getProgressImage(task.taskProgress)} //get image of task progress
-                                                    style={styles.progressImage}//display image of task progress
+                                                    source={getProgressImage(task.taskProgress)} 
+                                                    style={styles.progressImage}
                                                 />
                                             </View>
                                         </View>
