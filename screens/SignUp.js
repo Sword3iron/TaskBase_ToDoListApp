@@ -39,7 +39,7 @@ function SignUpPage({ navigation })
         };
 
         //fetch registration insertion from API mySQL
-        fetch('http://192.168.1.125/taskbase/register.php',{
+        fetch('http://xxx.xxx.x.xxx/taskbase/register.php',{
             method: 'POST', //use method post
             headers: { 'Content-Type' : 'application/json' }, //JSON content
             body: JSON.stringify(userData), //convert data to JSON string

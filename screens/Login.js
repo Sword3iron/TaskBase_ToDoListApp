@@ -48,7 +48,7 @@ function LoginPage({ navigation })
         if (!valid) return;
 
         //fetch login insertion from API mySQL
-        fetch("http://192.168.1.125/taskbase/login.php", {
+        fetch("http://xxx.xxx.x.xxx/taskbase/login.php", {
             method: 'POST', //use method post
             headers: { 'Content-Type':'application/json'}, //JSON content
             body: JSON.stringify({ email, password}) //convert data to JSON string

@@ -48,7 +48,7 @@ function NotificationPage({ route, navigation}){
     const fetchNotifications = async () => {
         try{
             //fetch task data from API mySQL
-            const res = await fetch(`http://192.168.1.125/taskbase/getNotification.php?userId=${userId}`);
+            const res = await fetch(`http://xxx.xxx.x.xxx/taskbase/getNotification.php?userId=${userId}`);
             const json = await res.json(); //convert data to JSON string
             console.log("Notification response: ", json) 
             if(json.success){
@@ -98,7 +98,7 @@ function NotificationPage({ route, navigation}){
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://xxx.xxx.x.xxx/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (

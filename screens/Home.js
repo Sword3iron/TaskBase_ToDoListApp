@@ -115,7 +115,7 @@ function Homepage({ route, navigation}){
     const fetchTodayTasksData = async() => {
         try{
             const today = getTodayDate();
-            const response = await fetch ('http://192.168.1.125/taskbase/getTodayTask.php',
+            const response = await fetch ('http://xxx.xxx.x.xxx/taskbase/getTodayTask.php',
                 {
                     method:'POST',
                     headers:{
@@ -144,7 +144,7 @@ function Homepage({ route, navigation}){
         //formate date for backend
         const formattedDate = formattedDateDBTask(date);
         //fetch task data from API mySQL
-        fetch('http://192.168.1.125/taskbase/getTask.php',{
+        fetch('http://xxx.xxx.x.xxx/taskbase/getTask.php',{
             method: 'POST', //use method post
             headers: { 'Content-Type' : 'application/JSON' }, //JSON content
             body: JSON.stringify({ //convert data to JSON string
@@ -254,7 +254,7 @@ function Homepage({ route, navigation}){
                             <View style={styles.profileImageContainer}>
                                 {profilePic && profilePic !== "null" && profilePic !== "" ? (
                                     <Image
-                                        source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
+                                        source={{ uri: 'http://xxx.xxx.x.xxx/taskbase/profilePicUpload/' + profilePic}}
                                         style={styles.profileImage}
                                     />
                                 ) : (
