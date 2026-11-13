@@ -45,23 +45,23 @@ function CalendarPage({route, navigation})
      //set declaration use state for information inserting
     const [refreshing, setRefreshing] = useState(false); //set refreshing
     const [taskAnalysisStats, setTaskAnalysisStats] = useState({ //set analysis stats
-        completed: 0, //completed
-        currently: 0, //in progress
-        incompleted: 0, //incompleted
-        cancelled: 0, //cancelled
+        Completed: 0, //completed
+        Currently: 0, //in progress
+        Incompleted: 0, //incompleted
+        Cancelled: 0, //cancelled
     });
     const [markedDates, setMarkedDates] = useState({});  //set marked dates
     const colorStatus ={ //set color status
-        completed: "#4caf50", //green
-        currently: "#ffc107", //brown
-        incompleted: "#f44333", //red
-        cancelled: "#9e9e9e", //black
+        Completed: "#4caf50", //green
+        Currently: "#ffc107", //brown
+        Incompleted: "#f44333", //red
+        Cancelled: "#9e9e9e", //black
     }
 
     //function used to get monthly task data
     const fetchMonthlyTasks = async (month) => {
         //fetch task data from API mySQL
-        fetch("http://xxx.xxx.x.xxx/taskbase/getMonthlyTask.php", {
+        fetch("http://192.168.1.125/taskbase/getMonthlyTask.php", {
             method: "POST", //use method post
             headers: {"Content-Type" : "application/json"}, //JSON content
             body: JSON.stringify({ userId, month}), //convert data to JSON string
@@ -86,7 +86,7 @@ function CalendarPage({route, navigation})
     //function used to get daily task data
     const fetchTasks = async (date) => {
          //fetch task data from API mySQL
-        fetch("http://xxx.xxx.x.xxx/taskbase/getTask.php", {
+        fetch("http://192.168.1.125/taskbase/getTask.php", {
             method: "POST",  //use method post
             headers: {"Content-Type" : "application/json"}, //JSON content
             body: JSON.stringify({ userId, date}), //convert data to JSON string
@@ -114,36 +114,38 @@ function CalendarPage({route, navigation})
         if (tasks.length === 0){
             //set defaut stats: 100% completed, others 0%
             setTaskAnalysisStats({
-                completed: 100, //completed
-                currently: 0, //in progress
-                incompleted: 0, //incompleted
-                cancelled: 0 //cancelled
+                Completed: 0, //completed
+                Currently: 0, //in progress
+                Incompleted: 0, //incompleted
+                Cancelled: 0, //cancelled
+                total: 0,
+                completedCount: 0
             });
             return; //return earl when there is no tasks.
         }
 
         //initialize counts for each task status
         let counts = { 
-            completed: 0,  //completed
-            currently: 0, //in progress
-            incompleted: 0, //incompleted
-            cancelled: 0 //cancelled
+            Completed: 0,  //completed
+            Currently: 0, //in progress
+            Incompleted: 0, //incompleted
+            Cancelled: 0 //cancelled
         };
 
         //loop through each task and increment relevant count based on task progress
         tasks.forEach((task) => {
             switch(task.taskProgress){
                 case "Completed": //completed
-                    counts.completed++;
+                    counts.Completed++;
                     break;
                 case "Currently": //in progress
-                    counts.currently++;
+                    counts.Currently++;
                     break;
                 case "Incompleted": //incompleted
-                    counts.incompleted++;
+                    counts.Incompleted++;
                     break;
                 case "Cancelled": //cancelled
-                    counts.cancelled++;
+                    counts.Cancelled++;
                     break;
                 default:
                     break; //ignore other values
@@ -155,12 +157,12 @@ function CalendarPage({route, navigation})
         //calculate percentage of each status and update state
         //calculate by dividing the number of task to total number times 100.
         setTaskAnalysisStats({
-            completed: Math.round((counts.completed/total) * 100), //completed
-            inProgress: Math.round((counts.inProgress/total) * 100), //in progress
-            incompleted: Math.round((counts.incompleted/total) * 100), //incompleted
-            cancelled: Math.round((counts.cancelled/total) * 100), //cancelled
+            Completed: Math.round((counts.Completed/total) * 100), //completed
+            Currently: Math.round((counts.Currently/total) * 100), //in progress
+            Incompleted: Math.round((counts.Incompleted/total) * 100), //incompleted
+            Cancelled: Math.round((counts.Cancelled/total) * 100), //cancelled
             total:total, //total
-            completedCount: counts.completed, //completed counting
+            completedCount: counts.Completed, //completed counting
         });
     };
 
@@ -226,7 +228,7 @@ function CalendarPage({route, navigation})
                         <View style={styles.profileImageContainer}>
                             {profilePic ? (
                                 <Image
-                                source={{ uri: 'http://xxx.xxx.x.xxx/taskbase/profilePicUpload/' + profilePic}}
+                                source={{ uri: 'http://192.168.1.125/taskbase/profilePicUpload/' + profilePic}}
                                 style={styles.profileImage}
                                 />
                             ) : (
@@ -272,7 +274,7 @@ function CalendarPage({route, navigation})
                                         style = {styles.smallImage}
                                 />
                                 <View style={styles.columnBox}>
-                                    <Text style={styles.percentageText}>{taskAnalysisStats.completed} %</Text>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.Completed} %</Text>
                                     <Text style={styles.labelText}>Completed</Text>
                                 </View>
                             </View>
@@ -283,7 +285,7 @@ function CalendarPage({route, navigation})
                                             style = {styles.smallImage}
                                 />
                                 <View style={styles.columnBox}>
-                                    <Text style={styles.percentageText}>{taskAnalysisStats.incompleted} %</Text>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.Incompleted} %</Text>
                                     <Text style={styles.labelText}>Incompleted</Text>
                                 </View>
                             </View> 
@@ -297,8 +299,8 @@ function CalendarPage({route, navigation})
                                         style = {styles.smallImage}
                                 />
                                 <View style={styles.columnBox}>
-                                    <Text style={styles.percentageText}>{taskAnalysisStats.inProgress} %</Text>
-                                    <Text style={styles.labelText}>In Progress</Text>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.Currently} %</Text>
+                                    <Text style={styles.labelText}>Currently</Text>
                                 </View>
                             </View>
                             {/**CANCELLED */}
@@ -307,7 +309,7 @@ function CalendarPage({route, navigation})
                                         style = {styles.smallImage}
                                 />
                                 <View style={styles.columnBox}>
-                                    <Text style={styles.percentageText}>{taskAnalysisStats.cancelled} %</Text>
+                                    <Text style={styles.percentageText}>{taskAnalysisStats.Cancelled} %</Text>
                                     <Text style={styles.labelText}>Cancelled</Text>
                                 </View>
                             </View> 
