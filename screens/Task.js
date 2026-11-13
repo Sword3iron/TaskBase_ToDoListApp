@@ -269,19 +269,53 @@ function TaskList({ route, navigation })
         boldInter: require('../assets/font/static/Inter_18pt-Bold.ttf'), // bold inter font
     });
 
-    const [refreshing, setRefreshing] = useState(false); //state to refresh
-    const onRefresh = async () =>{
-        setRefreshing(true); //show refresh indicator
-        setTimeout(() => {
-            setRefreshing(false); //disabled refresh indicator
-        }, 1000);  //refresh for 1 seconds
-    };
-
     //set declaration use state for information extraction
     const [selectedDate, setSelectedDate] = useState(new Date()); //set selected date
     const [tasks, setTasks] = useState([]); //set tasks
     const formattedDateDBTask = (date) => { //format date 
         return date.toISOString().split('T')[0]; //convert to ISO string and split
+    };
+    
+    const [refreshing, setRefreshing] = useState(false); //state to refresh
+    const onRefresh = async () =>{
+        setRefreshing(true); //show refresh indicator
+        await fetchTaskData(selectedDate); //fetch task based on today date
+        setRefreshing(false); //disabled refresh indicator
+    };
+
+    //function to extract today date
+    const getTodayDate = () => {
+        const today = new Date();
+        const year = today.getFullYear(); //get today year
+        const month = String(today.getMonth() + 1).padStart(2, '0'); //get today month
+        const day = String(today.getDate()).padStart(2, '0'); //get today date
+        return `${year}-${month}-${day}`; //format date database
+    }
+    //function to fetch today task data
+    const fetchTaskData = async() => {
+        try{
+            const today = getTodayDate();
+            const response = await fetch ('http://xxx.xxx.x.xxx/taskbase/getTodayTask.php',
+                {
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: userId, //user ID
+                        date: today, //today date 
+                    })
+                }
+            );
+
+            //parse JSON response
+            const data = await response.json();
+            if (response.ok){
+                setTasks(data);
+            }
+        }catch(error){
+            console.log("Error Fetching Tasks: ", error) //error message if parse failed
+        }
     };
 
     //use effect hook to fetch tasks whenever selectedDate changes
@@ -289,35 +323,6 @@ function TaskList({ route, navigation })
         fetchTaskData(selectedDate); //fetch task data
     }, [selectedDate]); //display array of selected date
 
-    //function to fetch task data from backend
-    const fetchTaskData = async(date) =>{
-         //formate date for backend
-        const formattedDate = formattedDateDBTask(date);
-         //fetch task data from API mySQL
-        fetch('http://xxx.xxx.x.xxx/taskbase/getTask.php',{
-            method: 'POST', //use method post
-            headers: { 'Content-Type' : 'application/JSON' }, //JSON content
-            body: JSON.stringify({ //convert data to JSON string
-                userId: userId, //userId
-                date: formattedDate //formatted Date
-            }),
-        })
-        .then(response => response.json()) //parse JSON response
-        .then(data => {
-            if(data.success){
-                //if server success, show alert message
-                setTasks(data.tasks);
-            }else{
-                //if failed, show error message
-                console.error('Task Fetch Failed', error);
-            }
-        })
-        .catch(error => {
-            //handle network or other errors
-            console.error(error);
-            Alert.alert('Error', 'Something Went Wrong');
-        });
-    }
 
     //function to determinate the image based on task progress
     const getProgressImage = (taskProgress) => {
