@@ -21,7 +21,7 @@ Step by step on how to run the code:
 4. Inside the 'TaskBase_ToDoListApp', there is a MySQL file ('taskbase.sql') and PHP files ('taskbaseapp_php'). DO NOT DELETE both of them.
 5. After downloaded XAMPP, install the software to your backend environment (C:\Xampp)
 6. Click inside the folder the XAMPP, you will see 'htdocs' folder, click inside.
-7. Copy entire 'taskbaseapp_php' folder and paste into the htdocs folder.
+7. Copy entire 'taskbaseapp_php' folder and paste into the htdocs folder. rename the 'taskbaseapp_php' into simply 'taskbase'.
 8. Then, open your XAMPP Control Panel, and activate both 'Apache' and 'MySQL' by tapping 'Start' button.
     **NOTE: Depend on your computer environment, you may need to edit your localhost admin port "3306" or "3307". See 'PORT NUMBER' for reference
 
