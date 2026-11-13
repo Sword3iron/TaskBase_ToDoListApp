@@ -322,13 +322,13 @@ function TaskList({ route, navigation })
     //function to determinate the image based on task progress
     const getProgressImage = (taskProgress) => {
         switch(taskProgress){
-            case 'completed':
+            case 'Completed':
                 return require('../assets/images/completed.png'); //completed
-            case 'incompleted':
+            case 'Incompleted':
                 return require('../assets/images/incompleted.png'); //incompleted
-            case 'inProgress':
+            case 'Currently':
                 return require('../assets/images/inProgress.png'); //in progress
-            case 'cancelled':
+            case 'Cancelled':
                 return require('../assets/images/cancelled.png');  //cancelled
         }
     }

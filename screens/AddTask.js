@@ -272,7 +272,7 @@ function AddNewTask({route, navigation}){
                         >
                             <Picker.Item label = "Select Status" value="" />
                             <Picker.Item label = "Cancelled" value="cancelled" />
-                            <Picker.Item label = "In Progress" value="inProgress" />
+                            <Picker.Item label = "Currently" value="currently" />
                             <Picker.Item label = "Completed" value="completed" />
                             <Picker.Item label = "Incompleted" value="Incompleted" />
                         </Picker>
@@ -591,7 +591,7 @@ function EditTask({route, navigation}){
                         >
                             <Picker.Item label = "Select Status" value="" />
                             <Picker.Item label = "Cancelled" value="cancelled" />
-                            <Picker.Item label = "In Progress" value="inProgress" />
+                            <Picker.Item label = "Currently" value="currently" />
                             <Picker.Item label = "Completed" value="completed" />
                             <Picker.Item label = "Incompleted" value="incompleted" />
                         </Picker>

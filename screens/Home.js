@@ -175,13 +175,13 @@ function Homepage({ route, navigation}){
     //function to deminate the style based on task progress
     const getProgressStyle = (taskProgress) => {
         switch(taskProgress){
-            case 'completed':
+            case 'Completed':
                 return{ backgroundColor: '#00a608'}; //Green for completed
-            case 'incompleted':
+            case 'Incompleted':
                 return{ backgroundColor: '#e60000'}; //Red for incomplete
-            case 'inProgress':
+            case 'Currently':
                 return{ backgroundColor: '#e69900'}; //Orange for in progress         
-            case 'cancelled':
+            case 'Cancelled':
                 return{ backgroundColor: '#454545'}; //Grey for cancelled   
         }
     }

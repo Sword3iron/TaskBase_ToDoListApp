@@ -46,14 +46,14 @@ function CalendarPage({route, navigation})
     const [refreshing, setRefreshing] = useState(false); //set refreshing
     const [taskAnalysisStats, setTaskAnalysisStats] = useState({ //set analysis stats
         completed: 0, //completed
-        inProgress: 0, //in progress
+        currently: 0, //in progress
         incompleted: 0, //incompleted
         cancelled: 0, //cancelled
     });
     const [markedDates, setMarkedDates] = useState({});  //set marked dates
     const colorStatus ={ //set color status
         completed: "#4caf50", //green
-        inProgress: "#ffc107", //brown
+        currently: "#ffc107", //brown
         incompleted: "#f44333", //red
         cancelled: "#9e9e9e", //black
     }
@@ -115,7 +115,7 @@ function CalendarPage({route, navigation})
             //set defaut stats: 100% completed, others 0%
             setTaskAnalysisStats({
                 completed: 100, //completed
-                inProgress: 0, //in progress
+                currently: 0, //in progress
                 incompleted: 0, //incompleted
                 cancelled: 0 //cancelled
             });
@@ -125,7 +125,7 @@ function CalendarPage({route, navigation})
         //initialize counts for each task status
         let counts = { 
             completed: 0,  //completed
-            inProgress: 0, //in progress
+            currently: 0, //in progress
             incompleted: 0, //incompleted
             cancelled: 0 //cancelled
         };
@@ -133,16 +133,16 @@ function CalendarPage({route, navigation})
         //loop through each task and increment relevant count based on task progress
         tasks.forEach((task) => {
             switch(task.taskProgress){
-                case "completed": //completed
+                case "Completed": //completed
                     counts.completed++;
                     break;
-                case "inProgress": //in progress
-                    counts.inProgress++;
+                case "Currently": //in progress
+                    counts.currently++;
                     break;
-                case "incompleted": //incompleted
+                case "Incompleted": //incompleted
                     counts.incompleted++;
                     break;
-                case "cancelled": //cancelled
+                case "Cancelled": //cancelled
                     counts.cancelled++;
                     break;
                 default:
