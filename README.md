@@ -26,7 +26,7 @@ Step by step on how to run the code:
     **NOTE: Depend on your computer environment, you may need to edit your localhost admin port "3306" or "3307". See 'PORT NUMBER' for reference
 
 9. After that, tap the 'Admin' button to open phpMyAdmin page.
-10. Inside phpMyAdmin, go to 'import' option on top bar.
+10. Inside phpMyAdmin, create a new database named "taskbasedata", after that click on 'import' option on top bar.
 11. Drag the MySQL file ('taskbase.sql') to the page, or click on 'choose file' option and browse for 'taskbase.sql' file and select it, it would automatically load the database.
 12. Open up your IDE (Visual Studio Code, Atom), and open the 'TaskBase_ToDoListApp' as workspace.
 13. Open up terminal and type 'cd..' to your folder location
