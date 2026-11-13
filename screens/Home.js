@@ -81,6 +81,16 @@ function Homepage({ route, navigation}){
         )
     }
 
+
+    //function to extract today date
+    const getTodayDate = () => {
+        const today = new Date();
+        const year = today.getFullYear(); //get today year
+        const month = String(today.getMonth() + 1).padStart(2, '0'); //get today month
+        const day = String(today.getDate().padStart(2, '0')); //get today date
+        return `${year}-${month}-${day}`; //format date database
+    }
+
     //function to format date object into 'YYYY--MM--DD' string for database queries
     const formattedDateDBTask = (date) => {
         return date.toISOString().split('T')[0]; //ISO string slicing to get date part
@@ -88,8 +98,35 @@ function Homepage({ route, navigation}){
     const [refreshing, setRefreshing] = useState(false); //state to refresh
     const onRefresh = async () =>{
         setRefreshing(true); //show refresh indicator
-        await fetchTaskData(selectedDate); //fetch task based on today date
+        await fetchTodayTasksData(selectedDate); //fetch task based on today date
         setRefreshing(false); //disabled refresh indicator
+    };
+
+    //function to fetch today task data
+    const fetchTodayTasksData = async() => {
+        try{
+            const today = getTodayDate();
+            const response = await fetch ('http://192.168.1.125/taskbase/getTodayTask.php',
+                {
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: userId, //user ID
+                        date: today, //today date 
+                    })
+                }
+            );
+
+            //parse JSON response
+            const data = await response.json();
+            if (response.ok){
+                setTasks(data);
+            }
+        }catch(error){
+            console.log("Error Fetching Tasks: ", error) //error message if parse failed
+        }
     };
 
     //function to fetch task for a specific date
@@ -140,13 +177,10 @@ function Homepage({ route, navigation}){
 
     //use effect hook to fetch tasks whenever selectedDate changes
     useEffect(() => {
-        fetchTaskData(selectedDate); //fetch task data
+        fetchTodayTasksData(selectedDate); //fetch task data
     }, [selectedDate]);  //display array of selected date
 
-    //use effect hook to fetch tasks whenever selectedDate changes
-    useEffect(() => {
-        fetchTaskData(selectedDate); //fetch task data
-    }, [selectedDate]);  //display array of selected date
+    
     
     //use effect hook to fetch weather API
     useEffect(() => {
