@@ -87,14 +87,23 @@ function Homepage({ route, navigation}){
         const today = new Date();
         const year = today.getFullYear(); //get today year
         const month = String(today.getMonth() + 1).padStart(2, '0'); //get today month
-        const day = String(today.getDate().padStart(2, '0')); //get today date
+        const day = String(today.getDate()).padStart(2, '0'); //get today date
         return `${year}-${month}-${day}`; //format date database
+    }
+
+    //use local date
+    const formatLocalDateDBTask = (date) => {
+        const year = date.getFullYear(); //get today year
+        const month = String(date.getMonth() + 1).padStart(2,'0'); //get today month
+        const day = String (date.getDate()).padStart(2, '0'); //get today date
+        return `${year}-${month}-${day}`;//format date database
     }
 
     //function to format date object into 'YYYY--MM--DD' string for database queries
     const formattedDateDBTask = (date) => {
         return date.toISOString().split('T')[0]; //ISO string slicing to get date part
     };
+
     const [refreshing, setRefreshing] = useState(false); //state to refresh
     const onRefresh = async () =>{
         setRefreshing(true); //show refresh indicator
@@ -129,6 +138,7 @@ function Homepage({ route, navigation}){
         }
     };
 
+    /*
     //function to fetch task for a specific date
     const fetchTaskData = async(date) =>{
         //formate date for backend
@@ -159,7 +169,8 @@ function Homepage({ route, navigation}){
         });
         //debugging on fetch tasks from mySql
         console.log('Fetching Tasks For: ', userId, formattedDate)
-    }
+    
+    */
 
     //function to deminate the style based on task progress
     const getProgressStyle = (taskProgress) => {
