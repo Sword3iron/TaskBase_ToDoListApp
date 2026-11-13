@@ -16,6 +16,8 @@ Step by step on how to run the code:
 3. Download the required software:
    - XAMPP ("https://www.apachefriends.org/download.html")
    - Expo Go (Google Play Store, IOS store)
+   - Node.js ("https://nodejs.org/en/download")
+   
 4. Inside the 'TaskBase_ToDoListApp', there is a MySQL file ('taskbase.sql') and PHP files ('taskbaseapp_php'). DO NOT DELETE both of them.
 5. After downloaded XAMPP, install the software to your backend environment (C:\Xampp)
 6. Click inside the folder the XAMPP, you will see 'htdocs' folder, click inside.
